@@ -3,8 +3,8 @@ extends Area2D
 var travelled_distance = 0
 
 func _physics_process(delta):
-	const SPEED = 1000
-	const RANGE = 1200
+	const SPEED = 10
+	const RANGE = 10
 	
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta # makes it time dependent instead of pixel dependent

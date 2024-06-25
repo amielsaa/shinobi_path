@@ -1,9 +1,11 @@
 extends Node2D
 
-
+@onready var pathFollow2D = %TileMap/Player/Path2D/PathFollow2D
+@onready var gameOver = $GameOver
 func spawn_mob():
-	var new_mob = preload("res://mob.tscn").instantiate()
+	var mob_spawner = preload("res://characters/mobs/mob_spawner.gd").new()
 	%PathFollow2D.progress_ratio = randf()
+	var new_mob = mob_spawner.spawn_mob(%PathFollow2D.global_position.y)
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
 
@@ -13,5 +15,7 @@ func _on_timer_timeout():
 
 
 func _on_player_health_depleted():
-	%GameOver.visible = true
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://game_over.tscn")
+	
+
+

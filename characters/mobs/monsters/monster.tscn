@@ -1,12 +1,12 @@
 [gd_scene load_steps=32 format=3 uid="uid://hg5or7f3ywvp"]
 
-[ext_resource type="Script" path="res://characters/beast/beast.gd" id="1_4cd21"]
-[ext_resource type="Shader" uid="uid://cu5mtjfi5jpw2" path="res://characters/shaders/hit_flash.tres" id="2_ao20n"]
-[ext_resource type="Texture2D" uid="uid://cwj1gsln3nymw" path="res://characters/beast/Beast.png" id="2_xschf"]
+[ext_resource type="Script" path="res://characters/mobs/monsters/monster.gd" id="1_1sqpi"]
+[ext_resource type="Shader" uid="uid://cu5mtjfi5jpw2" path="res://characters/shaders/hit_flash.tres" id="2_pde50"]
+[ext_resource type="Texture2D" uid="uid://cwj1gsln3nymw" path="res://characters/mobs/monsters/sprites/Beast.png" id="3_jsd7d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7g7kl"]
 resource_local_to_scene = true
-shader = ExtResource("2_ao20n")
+shader = ExtResource("2_pde50")
 shader_parameter/enabled = false
 shader_parameter/tint = Color(1, 1, 1, 1)
 
@@ -243,7 +243,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Beast:material:shader_parameter/enabled")
+tracks/0/path = NodePath("Monster:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -259,7 +259,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Beast:material:shader_parameter/enabled")
+tracks/0/path = NodePath("Monster:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -275,18 +275,17 @@ _data = {
 "hit_flash": SubResource("Animation_x8ts4")
 }
 
-[node name="Beast" type="Node2D"]
-script = ExtResource("1_4cd21")
+[node name="Monster" type="Node2D"]
+script = ExtResource("1_1sqpi")
 
-[node name="Beast" type="Sprite2D" parent="."]
+[node name="Monster" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7g7kl")
-scale = Vector2(5, 5)
-texture = ExtResource("2_xschf")
+texture = ExtResource("3_jsd7d")
 hframes = 4
 vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Beast")
+root_node = NodePath("../Monster")
 libraries = {
 "": SubResource("AnimationLibrary_hm752")
 }
@@ -294,7 +293,7 @@ autoplay = "idle_down"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 unique_name_in_owner = true
-root_node = NodePath("%AnimationTree/../Beast")
+root_node = NodePath("%AnimationTree/../Monster")
 tree_root = SubResource("AnimationNodeStateMachine_ncqg7")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false

@@ -273,7 +273,6 @@ graph_offset = Vector2(-46.3498, -11.6325)
 script = ExtResource("1_np4eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(7, 7)
 texture = ExtResource("1_phobr")
 hframes = 4
 vframes = 7

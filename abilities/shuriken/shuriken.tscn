@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://31jbybi32imd" path="res://abilities/shuriken/Shuriken.png" id="2_vrv0s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36bsr"]
-radius = 22.0907
+radius = 6.32456
 
 [sub_resource type="Animation" id="Animation_x6ai7"]
 length = 0.001
@@ -51,7 +51,6 @@ script = ExtResource("1_3v3ki")
 
 [node name="Shuriken" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(3, 3)
 texture = ExtResource("2_vrv0s")
 hframes = 2
 

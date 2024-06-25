@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MobResourceBase" load_steps=3 format=3 uid="uid://cft0qmmm6enwd"]
+
+[ext_resource type="Script" path="res://characters/mobs/mob_resource.gd" id="1_j8dll"]
+[ext_resource type="Texture2D" uid="uid://bena5jjuoktgh" path="res://characters/mobs/monsters/sprites/SpriteSheet.png" id="2_3ntl5"]
+
+[resource]
+script = ExtResource("1_j8dll")
+texture = ExtResource("2_3ntl5")
+health = 2
+speed = 0
+damage = 1
+type = 0

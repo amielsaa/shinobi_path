@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk3uiesofut5b"]
+[gd_scene load_steps=3 format=3 uid="uid://cesv1xs7dhrkc"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_phpmw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3eygj"]
-radius = 413.059
+radius = 88.0057
 
 [node name="Gun" type="Area2D"]
 collision_layer = 0
@@ -17,7 +17,7 @@ shape = SubResource("CircleShape2D_3eygj")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot"]
 unique_name_in_owner = true
-position = Vector2(53, 1)
+position = Vector2(2, 2.08165e-12)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3

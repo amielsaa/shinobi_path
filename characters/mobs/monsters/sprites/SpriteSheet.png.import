@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwj1gsln3nymw"
-path="res://.godot/imported/Beast.png-caa7286d2402167dd73eed1763ca0585.ctex"
+uid="uid://bena5jjuoktgh"
+path="res://.godot/imported/SpriteSheet.png-3970a0a516bf54af6d059f193a28a4d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/beast/Beast.png"
-dest_files=["res://.godot/imported/Beast.png-caa7286d2402167dd73eed1763ca0585.ctex"]
+source_file="res://characters/mobs/monsters/sprites/SpriteSheet.png"
+dest_files=["res://.godot/imported/SpriteSheet.png-3970a0a516bf54af6d059f193a28a4d6.ctex"]
 
 [params]
 
