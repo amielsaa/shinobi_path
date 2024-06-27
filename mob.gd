@@ -12,6 +12,7 @@ func _ready():
 	health = resource.health
 	monster.get_node("Monster").texture = resource.texture
 
+
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position) 
 	velocity = direction * 50.0

@@ -4,8 +4,13 @@ signal health_depleted
 signal score_added(score_value)
 
 @onready var playerUi = $Camera2D/PlayerUI
-
+@onready var abilityManager = $AbilityManager
 var health = 100.0
+
+func _ready():
+	var ability_resource = ResourceLoader.load("res://abilities/shuriken/shuriken.tres")
+	abilityManager.add_ability(ability_resource)
+	ability_resource.base_damage = 5
 
 
 func _physics_process(delta):
