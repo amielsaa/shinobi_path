@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AbilityResource" load_steps=3 format=3 uid="uid://blybh1c28o88w"]
+
+[ext_resource type="Script" path="res://abilities/ability_resource.gd" id="1_mwf8i"]
+[ext_resource type="PackedScene" uid="uid://o6wyl0pncsc3" path="res://abilities/shuriken/shuriken.tscn" id="1_obarj"]
+
+[resource]
+script = ExtResource("1_mwf8i")
+ability_type = 0
+ability_scene = ExtResource("1_obarj")
+base_damage = 2
