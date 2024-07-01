@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://by7xvlou6lasa"]
+[gd_scene load_steps=8 format=3 uid="uid://bcuaqcg0kjyoh"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_3lky3"]
-[ext_resource type="PackedScene" uid="uid://mfavp8y60bdc" path="res://player.tscn" id="1_wsev1"]
+[ext_resource type="PackedScene" uid="uid://e6mx81a80gq5" path="res://player.tscn" id="1_wsev1"]
 [ext_resource type="PackedScene" uid="uid://8b15cbh3x7n4" path="res://pine_tree.tscn" id="2_6akl2"]
 [ext_resource type="Texture2D" uid="uid://bv1633evrxexo" path="res://background/tilemaps/TilesetFloor.png" id="2_b1sdu"]
 

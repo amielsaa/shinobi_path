@@ -5,6 +5,7 @@ signal score_added(score_value)
 
 @onready var playerUi = $Camera2D/PlayerUI
 @onready var abilityManager = $AbilityManager
+@onready var skillTreeMenu = $SkillTreeMenu
 var health = 100.0
 
 func _ready():
@@ -12,11 +13,16 @@ func _ready():
 	abilityManager.add_ability(ability_resource)
 	ability_resource.base_damage = 5
 
+func _unhandled_input(event):
+	if event.is_action_pressed("skill_tree"):
+		skillTreeMenu.pause()
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") # Calculates direction vector as 2d value
 	velocity = direction * 80 # move at the input direction at 600 pixel per second
 	move_and_slide()
+	
+	
 	
 	if velocity.length() > 0.0:
 		%Ninja.play_walk_animation(direction)

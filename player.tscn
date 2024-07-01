@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://mfavp8y60bdc"]
+[gd_scene load_steps=10 format=3 uid="uid://e6mx81a80gq5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tqbvx"]
 [ext_resource type="PackedScene" uid="uid://c8cof28seym83" path="res://characters/ninja/ninja.tscn" id="2_mixfc"]
 [ext_resource type="PackedScene" uid="uid://bxbqtowc5rrso" path="res://characters/player_ui.tscn" id="3_jytti"]
 [ext_resource type="PackedScene" uid="uid://mkq4u3ltbouj" path="res://abilities/ability_manager.tscn" id="5_u436t"]
+[ext_resource type="PackedScene" uid="uid://bo2p6cweofls8" path="res://skill_tree/skill_tree_menu.tscn" id="5_vc645"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5nro"]
 radius = 7.28011
@@ -66,3 +67,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_5lolb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7h3p8")
 value = 100.0
 show_percentage = false
+
+[node name="SkillTreeMenu" parent="." instance=ExtResource("5_vc645")]
+visible = false

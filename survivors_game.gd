@@ -7,7 +7,8 @@ func spawn_mob():
 	%PathFollow2D.progress_ratio = randf()
 	var new_mob = mob_spawner.spawn_mob(%PathFollow2D.global_position.y)
 	new_mob.global_position = %PathFollow2D.global_position
-	add_child(new_mob)
+	$TileMap.add_child(new_mob)
+	$TileMap.move_child(new_mob, 0)
 
 
 func _on_timer_timeout():

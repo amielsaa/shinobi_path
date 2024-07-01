@@ -24,7 +24,7 @@ func _physics_process(delta):
 		timer.stop()
 		
 func shoot():
-	print(resource.base_damage)
+
 	var new_projectile = projectile_scene.instantiate()
 	new_projectile.global_position = %ShootingPoint.global_position
 	new_projectile.global_rotation = %ShootingPoint.global_rotation
