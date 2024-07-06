@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityResource" load_steps=3 format=3 uid="uid://cfffpwi1e5jet"]
+
+[ext_resource type="PackedScene" uid="uid://do1pjvcrlbqls" path="res://abilities/fireball/fireball.tscn" id="1_lv8ak"]
+[ext_resource type="Script" path="res://abilities/ability_resource.gd" id="1_r6rp2"]
+
+[resource]
+script = ExtResource("1_r6rp2")
+ability_type = 2
+ability_scene = ExtResource("1_lv8ak")
+base_damage = 1
+quantity = 3
