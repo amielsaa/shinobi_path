@@ -2,6 +2,7 @@ extends Area2D
 
 var travelled_distance = 0
 
+@export var resource: AbilityResource
 
 func _physics_process(delta):
 	const SPEED = 300
@@ -19,8 +20,9 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	queue_free()
+	print(resource.base_damage)
 	if body.has_method("take_damage"):
-		body.take_damage()
+		body.take_damage(resource.base_damage)
 
 
 

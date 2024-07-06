@@ -17,6 +17,15 @@ func add_ability(ability_resource: AbilityResource):
 			var projectile = preload("res://abilities/projectile.tscn").instantiate()
 			projectile.resource = ability_resource
 			add_child(projectile)
+		AbilityResource.AbilityType.CIRCULAR:
+			var circular = preload("res://abilities/circular.tscn").instantiate()
+			circular.resource = ability_resource
+			print(ability_resource)
+			add_child(circular)
+		AbilityResource.AbilityType.SPAWN:
+			var spawn = preload("res://abilities/spawn_ability.tscn").instantiate()
+			spawn.resource = ability_resource
+			add_child(spawn)
 
 	
 

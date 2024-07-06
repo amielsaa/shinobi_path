@@ -5,7 +5,6 @@ class_name SkillNode
 @onready var line_2d = $Line2D
 
 
-
 var skill_enabled = false
 
 func _ready():

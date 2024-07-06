@@ -11,7 +11,14 @@ var health = 100.0
 func _ready():
 	var ability_resource = ResourceLoader.load("res://abilities/shuriken/shuriken.tres")
 	abilityManager.add_ability(ability_resource)
-	ability_resource.base_damage = 5
+
+	var ability_resource_fireball = ResourceLoader.load("res://abilities/fireball/fireball.tres")
+	abilityManager.add_ability(ability_resource_fireball)
+	
+	var ability_resource_thunder = ResourceLoader.load("res://abilities/thunder/thunder.tres")
+	abilityManager.add_ability(ability_resource_thunder)
+
+	
 
 func _unhandled_input(event):
 	if event.is_action_pressed("skill_tree"):
@@ -36,6 +43,7 @@ func _physics_process(delta):
 		if health <= 0.0:
 			playerUi.save_score()
 			health_depleted.emit()
+
 
 func killed_mob(resource):
 	playerUi.update_score(resource.damage)

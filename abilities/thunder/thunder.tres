@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AbilityResource" load_steps=3 format=3 uid="uid://but1jc00i58ok"]
+
+[ext_resource type="PackedScene" uid="uid://bkk1ycmwgdiyl" path="res://abilities/thunder/thunder.tscn" id="1_lfktg"]
+[ext_resource type="Script" path="res://abilities/ability_resource.gd" id="1_xhmbg"]
+
+[resource]
+script = ExtResource("1_xhmbg")
+ability_type = 1
+ability_scene = ExtResource("1_lfktg")
+base_damage = 3
+quantity = 0

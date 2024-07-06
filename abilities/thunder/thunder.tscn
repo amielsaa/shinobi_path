@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://bkk1ycmwgdiyl"]
+
+[ext_resource type="Script" path="res://abilities/thunder/thunder.gd" id="1_3qt7s"]
+[ext_resource type="Texture2D" uid="uid://p7b60f6o747c" path="res://abilities/thunder/SpriteSheet.png" id="1_g1yg5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd714"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ugo"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(0, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db5iy"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(20, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr0fp"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(40, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeubt"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(60, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcj45"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(80, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ldt"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(100, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lawvb"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(120, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dybuo"]
+atlas = ExtResource("1_g1yg5")
+region = Rect2(140, 0, 20, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uxdai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72ugo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db5iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr0fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeubt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcj45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ldt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lawvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dybuo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Thunder" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3qt7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rd714")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uxdai")
+autoplay = "default"
+frame = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

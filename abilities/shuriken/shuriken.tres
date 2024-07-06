@@ -8,3 +8,4 @@ script = ExtResource("1_mwf8i")
 ability_type = 0
 ability_scene = ExtResource("1_obarj")
 base_damage = 2
+quantity = 0
