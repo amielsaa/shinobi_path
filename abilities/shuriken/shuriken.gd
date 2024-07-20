@@ -5,7 +5,7 @@ var travelled_distance = 0
 @export var resource: AbilityResource
 
 func _physics_process(delta):
-	const SPEED = 300
+	const SPEED = 200
 	const RANGE = 400
 	
 	var direction = Vector2.RIGHT.rotated(rotation)

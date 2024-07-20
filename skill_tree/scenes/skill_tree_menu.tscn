@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo2p6cweofls8"]
+
+[ext_resource type="Script" path="res://skill_tree/scripts/skill_tree_menu.gd" id="1_oycan"]
+[ext_resource type="Shader" path="res://skill_tree/resources/skill_tree_menu.gdshader" id="2_q7aog"]
+[ext_resource type="Theme" uid="uid://dtipy6xl0e3c6" path="res://skill_tree/resources/skill_tree_theme.tres" id="3_cxx6x"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="4_dgiji"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2sk0"]
+shader = ExtResource("2_q7aog")
+shader_parameter/amount = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_30xtk"]
+font = ExtResource("4_dgiji")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.0560928, 0.0395942, 0.071393, 1)
+
+[node name="SkillTreeMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_oycan")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_v2sk0")
+offset_left = -1363.0
+offset_top = -693.0
+offset_right = 1908.0
+offset_bottom = 1078.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_cxx6x")
+tab_alignment = 1
+
+[node name="ExitSkillTreeKey" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -87.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS       [ESC]       TO       EXIT"
+label_settings = SubResource("LabelSettings_30xtk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillPointsLabel" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "SKILL          POINTS: "
+label_settings = SubResource("LabelSettings_30xtk")
+horizontal_alignment = 1
+vertical_alignment = 1

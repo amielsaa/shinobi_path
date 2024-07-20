@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtl4cdgryw4mg"]
+
+[ext_resource type="Script" path="res://skill_tree/scripts/skill_tree.gd" id="1_5s2xb"]
+[ext_resource type="PackedScene" uid="uid://bw2g2u6b3kgjc" path="res://skill_tree/scenes/skill_button.tscn" id="2_3jxlu"]
+[ext_resource type="Texture2D" uid="uid://cabjghi4kjsjl" path="res://utils/fireball_plus_one.png" id="3_55lpb"]
+[ext_resource type="Texture2D" uid="uid://bjwyjepkv6du8" path="res://utils/more_dmg.png" id="4_ra47q"]
+
+[node name="FireBallTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5s2xb")
+
+[node name="SkillButton2" parent="." instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 280.0
+offset_top = 387.0
+offset_right = -1477.0
+offset_bottom = -569.0
+sprite = ExtResource("3_55lpb")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton2" parent="SkillButton2" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 504.0
+offset_top = 559.0
+offset_right = -1253.0
+offset_bottom = -397.0
+disabled = true
+sprite = ExtResource("3_55lpb")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton3" parent="SkillButton2/SkillButton2" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 719.0
+offset_top = 725.0
+offset_right = -1038.0
+offset_bottom = -231.0
+disabled = true
+sprite = ExtResource("4_ra47q")
+enhance_value = 2
+
+[node name="SkillButton2" parent="SkillButton2/SkillButton2/SkillButton3" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 1014.0
+offset_top = 721.0
+offset_right = -743.0
+offset_bottom = -235.0
+disabled = true
+sprite = ExtResource("3_55lpb")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton3" parent="SkillButton2" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 508.0
+offset_top = 245.0
+offset_right = -1249.0
+offset_bottom = -711.0
+disabled = true
+sprite = ExtResource("4_ra47q")
+enhance_value = 2
+
+[node name="SkillButton2" parent="SkillButton2/SkillButton3" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 723.0
+offset_top = 428.0
+offset_right = -1034.0
+offset_bottom = -528.0
+disabled = true
+sprite = ExtResource("3_55lpb")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton2" parent="SkillButton2/SkillButton3/SkillButton2" instance=ExtResource("2_3jxlu")]
+layout_mode = 1
+offset_left = 1011.0
+offset_top = 444.0
+offset_right = -746.0
+offset_bottom = -512.0
+disabled = true
+sprite = ExtResource("4_ra47q")
+enhance_value = 3

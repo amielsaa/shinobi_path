@@ -9,3 +9,4 @@ ability_type = 2
 ability_scene = ExtResource("1_lv8ak")
 base_damage = 1
 quantity = 3
+ability_name = "FIREBALL"

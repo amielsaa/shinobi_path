@@ -1,0 +1,159 @@
+[gd_scene load_steps=6 format=3 uid="uid://cadambye4ng35"]
+
+[ext_resource type="Script" path="res://skill_tree/scripts/skill_tree.gd" id="1_0vgra"]
+[ext_resource type="Theme" uid="uid://dtipy6xl0e3c6" path="res://skill_tree/resources/skill_tree_theme.tres" id="2_74s3s"]
+[ext_resource type="PackedScene" uid="uid://bw2g2u6b3kgjc" path="res://skill_tree/scenes/skill_button.tscn" id="3_egj8b"]
+[ext_resource type="Texture2D" uid="uid://c0l6bet1n8psy" path="res://utils/shuriken_plus_one.png" id="4_stya1"]
+[ext_resource type="Texture2D" uid="uid://bjwyjepkv6du8" path="res://utils/more_dmg.png" id="5_fu2fr"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -842.0
+offset_top = -487.0
+offset_right = 834.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vgra")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.495509, 0.495509, 0.495509, 1)
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_74s3s")
+tab_alignment = 1
+
+[node name="SHURIKEN" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="SkillButton" parent="TabContainer/SHURIKEN" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 46.0
+offset_top = 500.0
+offset_right = -1560.0
+offset_bottom = -325.0
+enhance_value = 2
+
+[node name="SkillButton6" parent="TabContainer/SHURIKEN/SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 202.0
+offset_top = -142.0
+offset_right = 202.0
+offset_bottom = -142.0
+disabled = true
+enhance_type = 0
+enhance_value = 2
+
+[node name="SkillButton5" parent="TabContainer/SHURIKEN/SkillButton/SkillButton6" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 477.0
+offset_top = -91.0
+offset_right = 477.0
+offset_bottom = -91.0
+disabled = true
+
+[node name="SkillButton4" parent="TabContainer/SHURIKEN/SkillButton/SkillButton6" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 269.0
+offset_top = 81.0
+offset_right = 269.0
+offset_bottom = 81.0
+disabled = true
+
+[node name="SkillButton3" parent="TabContainer/SHURIKEN/SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 206.0
+offset_top = 181.0
+offset_right = 206.0
+offset_bottom = 181.0
+disabled = true
+enhance_value = 2
+
+[node name="FIREBALL" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="THUNDER" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SkillButton" parent="." instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 282.0
+offset_top = 383.0
+offset_right = -1475.0
+offset_bottom = -573.0
+sprite = ExtResource("4_stya1")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton" parent="SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 581.0
+offset_top = 588.0
+offset_right = -1176.0
+offset_bottom = -368.0
+disabled = true
+sprite = ExtResource("4_stya1")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton" parent="SkillButton/SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 924.0
+offset_top = 597.0
+offset_right = -833.0
+offset_bottom = -359.0
+disabled = true
+sprite = ExtResource("4_stya1")
+enhance_type = 0
+enhance_value = 1
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 589.0
+offset_top = 212.0
+offset_right = -1168.0
+offset_bottom = -744.0
+disabled = true
+sprite = ExtResource("5_fu2fr")
+enhance_value = 2
+
+[node name="SkillButton2" parent="SkillButton/SkillButton2" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 913.0
+offset_top = 212.0
+offset_right = -844.0
+offset_bottom = -744.0
+disabled = true
+sprite = ExtResource("5_fu2fr")
+enhance_value = 3

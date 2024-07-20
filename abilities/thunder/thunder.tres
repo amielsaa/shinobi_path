@@ -8,4 +8,5 @@ script = ExtResource("1_xhmbg")
 ability_type = 1
 ability_scene = ExtResource("1_lfktg")
 base_damage = 3
-quantity = 0
+quantity = 1
+ability_name = "THUNDER"
