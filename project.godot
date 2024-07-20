@@ -82,6 +82,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SaveLoad="*res://save_load.gd"
+SkillTreeVariables="*res://skill_tree/scripts/skill_tree_variables.gd"
 
 [display]
 

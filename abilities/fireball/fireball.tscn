@@ -55,7 +55,7 @@ shape = SubResource("CircleShape2D_3wwya")
 position = Vector2(45, 2.08165e-12)
 sprite_frames = SubResource("SpriteFrames_6odva")
 autoplay = "default"
-frame_progress = 0.241425
+frame_progress = 0.90805
 
 [node name="FireballPivot" type="Marker2D" parent="."]
 visible = false

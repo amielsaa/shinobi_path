@@ -20,7 +20,6 @@ unique_name_in_owner = true
 position = Vector2(2, 2.08165e-12)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

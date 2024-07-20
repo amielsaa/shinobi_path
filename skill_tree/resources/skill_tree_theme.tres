@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dtipy6xl0e3c6"]
+
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="1_6x8t6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7d7tj"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 0.850791, 0.820058, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cboov"]
+bg_color = Color(0.617154, 0.271968, 0.289044, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdu7e"]
+bg_color = Color(0.685835, 0.685835, 0.685835, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[resource]
+TabContainer/font_sizes/font_size = 60
+TabContainer/fonts/font = ExtResource("1_6x8t6")
+TabContainer/styles/panel = SubResource("StyleBoxFlat_7d7tj")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_cboov")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_cdu7e")
