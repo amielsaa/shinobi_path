@@ -23,9 +23,13 @@ func _ready():
 	texture_normal = sprite
 
 func _on_pressed():
-	if SkillTreeVariables.skill_points <= 0:
+	#if SkillTreeVariables.skill_points <= 0:
+		#return
+	#SkillTreeVariables.skill_points -= 1
+	var decrement_succeed = SkillTreeVariables.decrement_skill_points_by_type(resource.element_type)
+	if !decrement_succeed:
 		return
-	SkillTreeVariables.skill_points -= 1
+	
 	skill_enabled = true 
 	panel.show_behind_parent = true ## making the panel (shadow) invisible
 	disabled = true ## unable to press it again
@@ -38,6 +42,7 @@ func _on_pressed():
 	for skill in skills:
 		if skill is SkillNode and skill_enabled:
 			skill.disabled = false
+	
 
 func apply_skill_enhancment():
 

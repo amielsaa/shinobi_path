@@ -2,7 +2,8 @@ extends CanvasLayer
 #add here function to add a resource to skilltree
 
 func _physics_process(delta):
-	%SkillPointsLabel.text = 'SKILL           POINTS:      ' + str(SkillTreeVariables.skill_points)
+	pass
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -13,9 +14,20 @@ func unpause():
 	visible = false
 
 
-func pause():
+func pause(element_type=null):
 	visible = true
 	get_tree().paused = true
+	if element_type:
+		match element_type:
+			Spawner.ELEMENT_TYPE.ICE:
+				print("ice")
+				%TabContainer.current_tab = 2
+			Spawner.ELEMENT_TYPE.FIRE:
+				print("fire")
+				%TabContainer.current_tab = 1
+			Spawner.ELEMENT_TYPE.METAL:
+				print("metal")
+				%TabContainer.current_tab = 0
 
 func add_skill_tree(new_skill_tree_scene: Node,resource: AbilityResource):
 	new_skill_tree_scene.resource = resource

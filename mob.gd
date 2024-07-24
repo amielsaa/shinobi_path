@@ -7,8 +7,9 @@ signal killed_mob(mob_resource)
 @onready var player = get_node("/root/Game/TileMap/Player")
 @onready var monster = %Monster 
 @onready var freeze_timer = $FreezeTimer
+@onready var audio_player = $AudioStreamPlayer
 var is_freezed = false
-
+var is_dead = false
 func _ready():
 	health = resource.health
 	monster.get_node("Monster").texture = resource.texture
@@ -25,16 +26,21 @@ func _physics_process(delta):
 func take_damage(damage):
 	health -= damage
 	%Monster.play_hurt_animation()
-	
+	if is_dead:
+		return
 	if health <= 0:
+		is_dead = true
+		audio_player.play()
+		monster.hide()
 		get_tree().call_group("Player","killed_mob",resource)
-		
-		queue_free()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
+		
+		await audio_player.finished
+		queue_free()
 
 func freeze():
 	is_freezed = true

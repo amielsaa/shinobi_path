@@ -2,10 +2,10 @@ extends Resource
 
 class_name MobResourceBase
 
-enum MobType {MONSTER, BOSS}
+#enum MobType {ICE, METAL, }
 
 @export var texture : Texture
 @export var health : int
 @export var speed: int
 @export var damage : int
-@export var type: MobType
+@export var type: Spawner.ELEMENT_TYPE

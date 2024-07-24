@@ -10,3 +10,4 @@ ability_scene = ExtResource("1_lfktg")
 base_damage = 3
 quantity = 1
 ability_name = "THUNDER"
+element_type = 0
