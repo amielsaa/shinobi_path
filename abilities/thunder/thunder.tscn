@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkk1ycmwgdiyl"]
+[gd_scene load_steps=14 format=3 uid="uid://bkk1ycmwgdiyl"]
 
 [ext_resource type="Script" path="res://abilities/thunder/thunder.gd" id="1_3qt7s"]
 [ext_resource type="Texture2D" uid="uid://p7b60f6o747c" path="res://abilities/thunder/SpriteSheet.png" id="1_g1yg5"]
+[ext_resource type="AudioStream" uid="uid://bmkxobts31v5s" path="res://audio/sfx/thunder_hit.wav" id="3_pef2n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd714"]
 radius = 4.0
@@ -88,6 +89,10 @@ frame = 4
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pef2n")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

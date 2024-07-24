@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfnv865n0enue"]
+
+[ext_resource type="AudioStream" uid="uid://wuycenw0ipro" path="res://audio/music/overdose.ogg" id="1_3802t"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_3802t")
+volume_db = -14.445
+autoplay = true
+bus = &"Music"

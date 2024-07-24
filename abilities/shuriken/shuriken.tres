@@ -10,3 +10,4 @@ ability_scene = ExtResource("1_obarj")
 base_damage = 1
 quantity = 1
 ability_name = "SHURIKEN"
+element_type = 2

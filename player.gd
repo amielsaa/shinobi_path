@@ -9,10 +9,16 @@ signal score_added(score_value)
 @onready var playerUi = $Camera2D/PlayerUI
 @onready var abilityManager = $AbilityManager
 @onready var skillTreeMenu = $SkillTreeMenu
-@onready var experienceBar = $ExperienceBar
+@onready var iceExperienceBar = %IceExperienceBar
+@onready var fireExperienceBar = %FireExperienceBar
+@onready var metalExperienceBar = %MetalExperienceBar
 
 var health = 100.0
-var experience = 0
+
+var ice_experience = 0
+var fire_experience = 0
+var metal_experience = 0
+
 var level = 1
 
 func _ready():
@@ -46,10 +52,7 @@ func _physics_process(delta):
 	velocity = direction * 80 # move at the input direction at 600 pixel per second
 	move_and_slide()
 	
-	
-	experienceBar.value = experience
-	if experience >= experienceBar.max_value:
-		level_up()
+	update_experience_bars()
 	
 	if velocity.length() > 0.0:
 		%Ninja.play_walk_animation(direction)
@@ -64,15 +67,35 @@ func _physics_process(delta):
 			playerUi.save_score()
 			health_depleted.emit()
 
-func level_up():
+
+func update_experience_bars():
+	iceExperienceBar.value = iceExperienceBar.experience
+	fireExperienceBar.value = fireExperienceBar.experience
+	metalExperienceBar.value = metalExperienceBar.experience
+	if iceExperienceBar.experience >= iceExperienceBar.max_value:
+		level_up(iceExperienceBar)
+	if fireExperienceBar.experience >= fireExperienceBar.max_value:
+		level_up(fireExperienceBar)
+	if metalExperienceBar.experience >= metalExperienceBar.max_value:
+		level_up(metalExperienceBar) 
+	
+func level_up(experienceBar):
 	experienceBar.min_value = experienceBar.max_value
 	experienceBar.max_value = experienceBar.max_value * EXPERIENCE_MULTIPLIER
-	level += 1
-	%LevelLabel.text = str(level)
-	SkillTreeVariables.skill_points += SKILL_POINTS_PER_LEVEL
-	skillTreeMenu.pause()
+	experienceBar.level += 1
+	experienceBar.set_level_text(experienceBar.level)
+	#SkillTreeVariables.skill_points += SKILL_POINTS_PER_LEVEL
+	SkillTreeVariables.inrement_skill_points_by_type(experienceBar.element_type, SKILL_POINTS_PER_LEVEL)
+	skillTreeMenu.pause(experienceBar.element_type)
 
 func killed_mob(resource):
-	experience += resource.damage
+	match resource.type:
+		Spawner.ELEMENT_TYPE.FIRE:
+			fireExperienceBar.experience += resource.damage
+		Spawner.ELEMENT_TYPE.ICE:
+			iceExperienceBar.experience += resource.damage
+		Spawner.ELEMENT_TYPE.METAL:
+			metalExperienceBar.experience += resource.damage
+		
 	playerUi.update_score(resource.damage)
 

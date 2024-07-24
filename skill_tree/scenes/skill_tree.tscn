@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cadambye4ng35"]
+[gd_scene load_steps=8 format=3 uid="uid://cadambye4ng35"]
 
 [ext_resource type="Script" path="res://skill_tree/scripts/skill_tree.gd" id="1_0vgra"]
 [ext_resource type="Theme" uid="uid://dtipy6xl0e3c6" path="res://skill_tree/resources/skill_tree_theme.tres" id="2_74s3s"]
 [ext_resource type="PackedScene" uid="uid://bw2g2u6b3kgjc" path="res://skill_tree/scenes/skill_button.tscn" id="3_egj8b"]
 [ext_resource type="Texture2D" uid="uid://c0l6bet1n8psy" path="res://utils/shuriken_plus_one.png" id="4_stya1"]
 [ext_resource type="Texture2D" uid="uid://bjwyjepkv6du8" path="res://utils/more_dmg.png" id="5_fu2fr"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="6_aq8ct"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k0cs"]
+font = ExtResource("6_aq8ct")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.0560928, 0.0395942, 0.071393, 1)
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -20,6 +27,7 @@ offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0vgra")
+element_type = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -157,3 +165,19 @@ offset_bottom = -744.0
 disabled = true
 sprite = ExtResource("5_fu2fr")
 enhance_value = 3
+
+[node name="SkillPointsLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -181.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "METAL          SKILL          POINTS: "
+label_settings = SubResource("LabelSettings_8k0cs")
+horizontal_alignment = 1
+vertical_alignment = 1

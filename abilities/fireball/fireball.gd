@@ -6,7 +6,7 @@ var speed = 4
 @export var resource: AbilityResource
 @onready var collisionShape = $CollisionShape2D
 @onready var sprite = $AnimatedSprite2D
-
+@onready var audio_player = $AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	collisionShape.position.x = radius
@@ -19,5 +19,6 @@ func _process(delta):
 	
 
 func _on_body_entered(body):
+	#audio_player.play()
 	if body.has_method("take_damage"):
 		body.take_damage(resource.base_damage)

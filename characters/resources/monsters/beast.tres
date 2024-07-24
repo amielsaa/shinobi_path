@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MobResourceBase" load_steps=3 format=3 uid="uid://cya1hq4l4sdm6"]
+
+[ext_resource type="Script" path="res://characters/mobs/mob_resource.gd" id="1_fono6"]
+[ext_resource type="Texture2D" uid="uid://cwj1gsln3nymw" path="res://characters/mobs/monsters/sprites/Beast.png" id="2_7rl0o"]
+
+[resource]
+script = ExtResource("1_fono6")
+texture = ExtResource("2_7rl0o")
+health = 5
+speed = 0
+damage = 3
+type = 1

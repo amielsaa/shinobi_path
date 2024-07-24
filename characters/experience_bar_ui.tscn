@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhj8in8615gkr"]
+
+[ext_resource type="Script" path="res://characters/experience_bar_ui.gd" id="1_5joqw"]
+[ext_resource type="Texture2D" uid="uid://dcbe26sw18jha" path="res://skill_tree/nine_path_8.png" id="1_aiacu"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="2_3apbm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qghnj"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0lev"]
+bg_color = Color(0.178703, 0.447566, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ExperienceBar" type="ProgressBar"]
+offset_right = 79.0
+offset_bottom = 10.0
+scale = Vector2(0.9, 0.9)
+theme_override_styles/background = SubResource("StyleBoxFlat_qghnj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h0lev")
+max_value = 50.0
+show_percentage = false
+script = ExtResource("1_5joqw")
+
+[node name="LevelNode" type="Sprite2D" parent="."]
+position = Vector2(-5.55556, 5.55555)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_aiacu")
+
+[node name="LevelLabel" type="Label" parent="LevelNode"]
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3apbm")
+theme_override_font_sizes/font_size = 13
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

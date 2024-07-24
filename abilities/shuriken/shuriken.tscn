@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://o6wyl0pncsc3"]
+[gd_scene load_steps=8 format=3 uid="uid://o6wyl0pncsc3"]
 
 [ext_resource type="Script" path="res://abilities/shuriken/shuriken.gd" id="1_3v3ki"]
 [ext_resource type="Texture2D" uid="uid://31jbybi32imd" path="res://abilities/shuriken/Shuriken.png" id="2_vrv0s"]
+[ext_resource type="AudioStream" uid="uid://jh0rhgryxh0n" path="res://audio/sfx/shuriken_hit.wav" id="3_u5s4d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36bsr"]
 radius = 6.32456
@@ -62,5 +63,8 @@ libraries = {
 "": SubResource("AnimationLibrary_ym355")
 }
 autoplay = "base"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u5s4d")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

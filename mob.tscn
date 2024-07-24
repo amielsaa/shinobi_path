@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd5ap0ddl4qvj"]
+[gd_scene load_steps=6 format=3 uid="uid://bd5ap0ddl4qvj"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_kn8at"]
-[ext_resource type="Resource" uid="uid://cya1hq4l4sdm6" path="res://characters/resources/beast.tres" id="2_yqv3r"]
+[ext_resource type="Resource" uid="uid://cya1hq4l4sdm6" path="res://characters/resources/monsters/beast.tres" id="2_yqv3r"]
 [ext_resource type="PackedScene" uid="uid://hg5or7f3ywvp" path="res://characters/mobs/monsters/monster.tscn" id="3_loq63"]
+[ext_resource type="AudioStream" uid="uid://by64oj4ff1odr" path="res://audio/sfx/kill_mob.wav" id="4_xor2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pxgfy"]
 radius = 9.05539
@@ -24,5 +25,9 @@ shape = SubResource("CircleShape2D_pxgfy")
 [node name="FreezeTimer" type="Timer" parent="."]
 wait_time = 0.8
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xor2d")
+bus = &"SFX"
 
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]

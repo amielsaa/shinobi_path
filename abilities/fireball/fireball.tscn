@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://do1pjvcrlbqls"]
+[gd_scene load_steps=10 format=3 uid="uid://do1pjvcrlbqls"]
 
 [ext_resource type="Script" path="res://abilities/fireball/fireball.gd" id="1_xab2w"]
 [ext_resource type="Texture2D" uid="uid://bjcjgr3tqextp" path="res://abilities/fireball/Fireball.png" id="2_c6xf7"]
+[ext_resource type="AudioStream" uid="uid://vtmss2q14je6" path="res://audio/sfx/fireball_hit.wav" id="3_j1b4s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wwya"]
 radius = 9.05539
@@ -59,5 +60,10 @@ frame_progress = 0.90805
 
 [node name="FireballPivot" type="Marker2D" parent="."]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j1b4s")
+volume_db = -14.123
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
