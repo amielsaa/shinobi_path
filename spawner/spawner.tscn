@@ -1,14 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8w0i285jvovs"]
+[gd_scene load_steps=4 format=3 uid="uid://b8w0i285jvovs"]
 
 [ext_resource type="Script" path="res://spawner/spawner.gd" id="1_7bvww"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4rj7u"]
 radius = 718.118
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjqhp"]
+radius = 368.0
+
 [node name="Spawner" type="Area2D"]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_7bvww")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="RegularMobs" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4rj7u")
+
+[node name="BossArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BossMobs" type="CollisionShape2D" parent="BossArea"]
+shape = SubResource("CircleShape2D_gjqhp")
+debug_color = Color(0.960784, 0, 0.52549, 0.419608)

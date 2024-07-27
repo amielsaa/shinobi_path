@@ -8,7 +8,8 @@ enum ELEMENT_TYPE {ICE, FIRE, METAL}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$RegularMobs.set_meta("identifier","regularMobs")
+	$BossArea.set_meta("identifier","bossMobs")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
