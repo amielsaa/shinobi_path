@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HitableResourceBase" load_steps=2 format=3 uid="uid://digcy5syvh2aj"]
+
+[ext_resource type="Script" path="res://hitable_resource.gd" id="1_2nt7o"]
+
+[resource]
+script = ExtResource("1_2nt7o")
+health = 10

@@ -1,14 +1,116 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8w0i285jvovs"]
+[gd_scene load_steps=14 format=3 uid="uid://b8w0i285jvovs"]
 
 [ext_resource type="Script" path="res://spawner/spawner.gd" id="1_7bvww"]
+[ext_resource type="Shader" uid="uid://cu5mtjfi5jpw2" path="res://characters/shaders/hit_flash.tres" id="2_206yc"]
+[ext_resource type="Texture2D" uid="uid://dwpt3aghns7wx" path="res://spawner/spawner-totem.png" id="2_aqoa8"]
+[ext_resource type="PackedScene" uid="uid://5ym53th1ad3n" path="res://spawner/mob_area_zone.tscn" id="2_jkvva"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4rj7u"]
-radius = 718.118
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt5vy"]
+shader = ExtResource("2_206yc")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
 
-[node name="Spawner" type="Area2D"]
-collision_layer = 8
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8kty"]
+radius = 17.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ndogo"]
+resource_local_to_scene = true
+radius = 700.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yp08f"]
+resource_local_to_scene = true
+radius = 200.0
+
+[sub_resource type="Animation" id="Animation_qbq1p"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ykqe3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y56kd"]
+_data = {
+"RESET": SubResource("Animation_ykqe3"),
+"hit_flash": SubResource("Animation_qbq1p")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kqft"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7awj"]
+bg_color = Color(0, 0.624935, 0.317781, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Spawner" type="StaticBody2D"]
+collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_7bvww")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tt5vy")
+texture = ExtResource("2_aqoa8")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_4rj7u")
+shape = SubResource("CapsuleShape2D_j8kty")
+
+[node name="MonsterAreaZone" parent="." instance=ExtResource("2_jkvva")]
+
+[node name="CollisionShape2D" parent="MonsterAreaZone" index="0"]
+shape = SubResource("CircleShape2D_ndogo")
+
+[node name="BossAreaZone" parent="." instance=ExtResource("2_jkvva")]
+area_zone_type = 1
+
+[node name="CollisionShape2D" parent="BossAreaZone" index="0"]
+shape = SubResource("CircleShape2D_yp08f")
+
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y56kd")
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -26.0
+offset_top = -30.0
+offset_right = 112.0
+offset_bottom = -11.0
+scale = Vector2(0.384126, 0.235464)
+theme_override_styles/background = SubResource("StyleBoxFlat_6kqft")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y7awj")
+value = 100.0
+show_percentage = false
+
+[editable path="MonsterAreaZone"]
+[editable path="BossAreaZone"]

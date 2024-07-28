@@ -1,3 +1,4 @@
+
 [gd_resource type="Resource" script_class="MobResourceBase" load_steps=3 format=3 uid="uid://cpf0edu5x1f0t"]
 
 [ext_resource type="Script" path="res://characters/mobs/mob_resource.gd" id="1_q2wxf"]
