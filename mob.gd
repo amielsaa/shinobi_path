@@ -8,8 +8,10 @@ signal killed_mob(mob_resource)
 @onready var monster = %Monster 
 @onready var freeze_timer = $FreezeTimer
 @onready var audio_player = $AudioStreamPlayer
+
 var is_freezed = false
 var is_dead = false
+
 func _ready():
 	health = resource.health
 	monster.get_node("Monster").texture = resource.texture

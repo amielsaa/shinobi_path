@@ -1,6 +1,6 @@
 extends Node
 
-var skill_points: int = 5
+#var skill_points: int = 5
 var fire_skill_points: int = 1
 var ice_skill_points: int = 1
 var metal_skill_points: int = 1
