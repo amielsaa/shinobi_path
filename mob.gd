@@ -26,12 +26,12 @@ func _physics_process(delta):
 func take_damage(damage):
 	health -= damage
 	%Monster.play_hurt_animation()
-	if is_dead:
+	if is_dead: # fixed a bug where the player can hit a dead enemy
 		return
 	if health <= 0:
 		is_dead = true
 		audio_player.play()
-		monster.hide()
+		monster.hide() # fixed a bug where it takes too long for the mob node to be freed
 		get_tree().call_group("Player","killed_mob",resource)
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")

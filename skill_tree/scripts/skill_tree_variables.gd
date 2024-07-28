@@ -1,10 +1,10 @@
 extends Node
 
-var skill_points: int = 5
+
 var fire_skill_points: int = 1
 var ice_skill_points: int = 1
 var metal_skill_points: int = 1
-#enum ELEMENT_TYPE {ICE, FIRE, METAL}
+
 
 func decrement_skill_points_by_type(element_type: Spawner.ELEMENT_TYPE):
 	print(element_type)

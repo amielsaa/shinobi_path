@@ -1,13 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ccomdpj71arav"]
+[gd_scene load_steps=13 format=3 uid="uid://ccomdpj71arav"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tqbvx"]
 [ext_resource type="PackedScene" uid="uid://c8cof28seym83" path="res://characters/ninja/ninja.tscn" id="2_mixfc"]
 [ext_resource type="PackedScene" uid="uid://bxbqtowc5rrso" path="res://characters/player_ui.tscn" id="3_jytti"]
-[ext_resource type="Texture2D" uid="uid://dcbe26sw18jha" path="res://skill_tree/nine_path_8.png" id="5_5n01v"]
 [ext_resource type="PackedScene" uid="uid://mkq4u3ltbouj" path="res://abilities/ability_manager.tscn" id="5_u436t"]
 [ext_resource type="PackedScene" uid="uid://bo2p6cweofls8" path="res://skill_tree/scenes/skill_tree_menu.tscn" id="5_vc645"]
 [ext_resource type="PackedScene" uid="uid://dhj8in8615gkr" path="res://characters/experience_bar_ui.tscn" id="5_wfgpn"]
-[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="6_yt31v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5nro"]
 radius = 7.28011
@@ -122,24 +120,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_5lolb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7h3p8")
 value = 100.0
 show_percentage = false
-
-[node name="LevelNode" type="Sprite2D" parent="."]
-position = Vector2(-12, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_5n01v")
-
-[node name="LevelLabel" type="Label" parent="LevelNode"]
-unique_name_in_owner = true
-offset_left = -20.0
-offset_top = -14.0
-offset_right = 20.0
-offset_bottom = 9.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_yt31v")
-theme_override_font_sizes/font_size = 13
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="SkillTreeMenu" parent="." instance=ExtResource("5_vc645")]
 visible = false
