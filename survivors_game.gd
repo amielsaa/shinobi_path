@@ -1,5 +1,7 @@
 extends Node2D
 
+const TIMER_DECRESE_VALUE = 0.2
+
 @onready var pathFollow2D = %TileMap/Player/Path2D/PathFollow2D
 @onready var gameOver = $GameOver
 
@@ -61,6 +63,7 @@ func _on_area_2d_area_exited(area):
 		bossMobFlag = false
 		
 func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
+	$Timer.wait_time -= TIMER_DECRESE_VALUE
 	active_spawner_totems -= 1
 	if active_spawner_totems <= 0:
 		#transition to 'YOU WON' screen

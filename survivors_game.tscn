@@ -1727,7 +1727,7 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_lrdhm")
 
 [node name="FireSpawner" parent="TileMap" instance=ExtResource("4_6hvdc")]
-position = Vector2(416, 338)
+position = Vector2(45, 135)
 type = 1
 resource = ExtResource("6_thlur")
 
@@ -1776,7 +1776,7 @@ position = Vector2(120, 987)
 position = Vector2(244, 1044)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.6
 autostart = true
 
 [connection signal="health_depleted" from="TileMap/Player" to="." method="_on_player_health_depleted"]
