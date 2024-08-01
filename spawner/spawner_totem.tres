@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_2nt7o")
-health = 10
+health = 100
