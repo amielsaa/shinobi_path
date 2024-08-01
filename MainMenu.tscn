@@ -1,0 +1,125 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2oqi3wvtaq5g"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_ieo12"]
+[ext_resource type="Texture2D" uid="uid://01oc2imsmf3x" path="res://Map from above.jpg" id="2_lc0wf"]
+
+[sub_resource type="FontFile" id="FontFile_fg5cb"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/80/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/80/0/ascent = 0.0
+cache/0/80/0/descent = 0.0
+cache/0/80/0/underline_position = 0.0
+cache/0/80/0/underline_thickness = 0.0
+cache/0/80/0/scale = 1.0
+cache/0/80/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/80/0/kerning_overrides/80/0 = Vector2(0, 0)
+cache/0/80/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/80/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/80/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/80/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/5/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/80/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/5/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/80/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/5/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ieo12")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(958, 540.25)
+scale = Vector2(2.33577, 1.5119)
+texture = ExtResource("2_lc0wf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 97.0
+offset_top = 188.0
+offset_right = 393.0
+offset_bottom = 427.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+
+[node name="InstructionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "How to Play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 89.0
+offset_right = 1235.0
+offset_bottom = 211.0
+theme_override_fonts/font = SubResource("FontFile_fg5cb")
+theme_override_font_sizes/font_size = 80
+text = "Shinobi's Path"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 1575.0
+offset_top = 698.0
+offset_right = 1845.0
+offset_bottom = 951.0
+theme_override_fonts/font = SubResource("FontFile_fg5cb")
+theme_override_font_sizes/font_size = 40
+text = "Made By:
+Amiel Saad
+Yoav Avital
+Batel Skolnik"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InstructionButton" to="." method="_on_instruction_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
