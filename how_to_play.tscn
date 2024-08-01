@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b35x6myvw042l"]
+
+[ext_resource type="Texture2D" uid="uid://dwh25sirw46rt" path="res://toConvert-1.png" id="1_3m76j"]
+[ext_resource type="Script" path="res://how_to_play.gd" id="1_fpwjt"]
+[ext_resource type="Texture2D" uid="uid://01oc2imsmf3x" path="res://Map from above.jpg" id="3_kvruc"]
+
+[node name="HowToPlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fpwjt")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3m76j")
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_kvruc")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 911.0
+offset_right = 183.0
+offset_bottom = 961.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 974.0
+offset_right = 182.0
+offset_bottom = 1024.0
+theme_override_font_sizes/font_size = 24
+text = "Back To Menu"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
