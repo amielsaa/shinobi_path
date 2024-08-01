@@ -8,6 +8,6 @@ script = ExtResource("1_r6rp2")
 ability_type = 2
 ability_scene = ExtResource("1_lv8ak")
 base_damage = 1
-quantity = 3
+quantity = 2
 ability_name = "FIREBALL"
 element_type = 1

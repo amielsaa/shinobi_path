@@ -5,6 +5,12 @@ const TIMER_DECRESE_VALUE = 0.2
 @onready var pathFollow2D = %TileMap/Player/Path2D/PathFollow2D
 @onready var gameOver = $GameOver
 
+#wall coordinate limit for mob spawning
+const MIN_Y = -630
+const MAX_Y = 2090
+const MIN_X = -760
+const MAX_X = 2100
+
 var is_game_over = false
 var bossMobFlag = false
 var active_spawner_totems: int = 3
@@ -15,6 +21,9 @@ func spawn_mob():
 	%PathFollow2D.progress_ratio = randf()
 	var new_mob = mob_spawner.spawn_mob(spawn_type, bossMobFlag)
 	new_mob.global_position = %PathFollow2D.global_position
+	new_mob.global_position.y = clamp(new_mob.global_position.y, MIN_Y, MAX_Y)
+	new_mob.global_position.x = clamp(new_mob.global_position.x, MIN_X, MAX_X)
+
 	$TileMap.add_child(new_mob)
 	$TileMap.move_child(new_mob, 0)
 
