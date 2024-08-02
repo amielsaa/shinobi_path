@@ -1,75 +1,75 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx5in4pvl6qlo"]
 
-[ext_resource type="Script" path="res://skill_tree/scripts/skill_tree.gd" id="1_qpd6u"]
-[ext_resource type="PackedScene" uid="uid://bw2g2u6b3kgjc" path="res://skill_tree/scenes/skill_button.tscn" id="1_y3g30"]
-[ext_resource type="Texture2D" uid="uid://xcno28cdonh5" path="res://utils/thunder_plus_one.png" id="2_bmdv6"]
-[ext_resource type="Texture2D" uid="uid://bjwyjepkv6du8" path="res://utils/more_dmg.png" id="3_2ruj0"]
-[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="5_7oedu"]
+[ext_resource type="Script" path="res://skill_tree/scripts/skill_tree.gd" id="1_kwh64"]
+[ext_resource type="PackedScene" uid="uid://bw2g2u6b3kgjc" path="res://skill_tree/scenes/skill_button.tscn" id="2_ir41r"]
+[ext_resource type="Texture2D" uid="uid://bjsxxhlv5yykl" path="res://utils/ice_plus_one.png" id="3_k5p1m"]
+[ext_resource type="Texture2D" uid="uid://bjwyjepkv6du8" path="res://utils/more_dmg.png" id="4_2dk8t"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="5_svfi8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uxwm7"]
-font = ExtResource("5_7oedu")
+font = ExtResource("5_svfi8")
 font_size = 50
 outline_size = 10
 outline_color = Color(0.0560928, 0.0395942, 0.071393, 1)
 
-[node name="ThunderSkillTree" type="Control"]
+[node name="IceSkillTree" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qpd6u")
+script = ExtResource("1_kwh64")
 
-[node name="SkillButton2" parent="." instance=ExtResource("1_y3g30")]
+[node name="SkillButton2" parent="." instance=ExtResource("2_ir41r")]
 layout_mode = 1
 offset_left = 280.0
 offset_top = 387.0
 offset_right = -1477.0
 offset_bottom = -569.0
 scale = Vector2(0.995058, 1.01604)
-sprite = ExtResource("2_bmdv6")
+sprite = ExtResource("3_k5p1m")
 enhance_type = 0
 enhance_value = 1
 
-[node name="SkillButton2" parent="SkillButton2" instance=ExtResource("1_y3g30")]
+[node name="SkillButton2" parent="SkillButton2" instance=ExtResource("2_ir41r")]
 layout_mode = 1
 offset_left = 504.0
 offset_top = 559.0
 offset_right = -1253.0
 offset_bottom = -397.0
 disabled = true
-sprite = ExtResource("3_2ruj0")
+sprite = ExtResource("4_2dk8t")
 enhance_value = 1
 
-[node name="SkillButton3" parent="SkillButton2/SkillButton2" instance=ExtResource("1_y3g30")]
+[node name="SkillButton3" parent="SkillButton2/SkillButton2" instance=ExtResource("2_ir41r")]
 layout_mode = 1
 offset_left = 750.0
 offset_top = 563.0
 offset_right = -1007.0
 offset_bottom = -393.0
 disabled = true
-sprite = ExtResource("3_2ruj0")
+sprite = ExtResource("4_2dk8t")
 enhance_value = 2
 
-[node name="SkillButton3" parent="SkillButton2" instance=ExtResource("1_y3g30")]
+[node name="SkillButton3" parent="SkillButton2" instance=ExtResource("2_ir41r")]
 layout_mode = 1
 offset_left = 508.0
 offset_top = 245.0
 offset_right = -1249.0
 offset_bottom = -711.0
 disabled = true
-sprite = ExtResource("3_2ruj0")
+sprite = ExtResource("4_2dk8t")
 enhance_value = 1
 
-[node name="SkillButton2" parent="SkillButton2/SkillButton3" instance=ExtResource("1_y3g30")]
+[node name="SkillButton2" parent="SkillButton2/SkillButton3" instance=ExtResource("2_ir41r")]
 layout_mode = 1
 offset_left = 747.0
 offset_top = 151.0
 offset_right = -1010.0
 offset_bottom = -805.0
 disabled = true
-sprite = ExtResource("2_bmdv6")
+sprite = ExtResource("3_k5p1m")
 enhance_type = 0
 enhance_value = 1
 

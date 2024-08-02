@@ -4490,11 +4490,11 @@ offset_bottom = 1107.0
 color = Color(0, 1, 1, 1)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.1
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-760, -635)
+position = Vector2(-668, -622)
 
 [connection signal="health_depleted" from="TileMap/Player" to="." method="_on_player_health_depleted"]
 [connection signal="area_entered" from="TileMap/Player/Area2D" to="." method="_on_area_2d_area_entered"]

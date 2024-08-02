@@ -6,10 +6,11 @@ const TIMER_DECRESE_VALUE = 0.2
 @onready var gameOver = $GameOver
 
 #wall coordinate limit for mob spawning
-const MIN_Y = -630
-const MAX_Y = 2090
-const MIN_X = -760
-const MAX_X = 2100
+const MIN_Y = -550
+const MAX_Y = 2000
+const MIN_X = -650
+const MAX_X = 2000
+const MAX_MONSTER_SPAWNS: int= 75
 
 var is_game_over = false
 var bossMobFlag = false
@@ -20,15 +21,19 @@ func spawn_mob():
 	var mob_spawner = preload("res://characters/mobs/mob_spawner.gd").new()
 	%PathFollow2D.progress_ratio = randf()
 	var new_mob = mob_spawner.spawn_mob(spawn_type, bossMobFlag)
-	new_mob.global_position = %PathFollow2D.global_position
-	new_mob.global_position.y = clamp(new_mob.global_position.y, MIN_Y, MAX_Y)
-	new_mob.global_position.x = clamp(new_mob.global_position.x, MIN_X, MAX_X)
-
+	var path_follow_position = %PathFollow2D.global_position
+	new_mob.global_position.y = clamp(path_follow_position.y, MIN_Y, MAX_Y)
+	new_mob.global_position.x = clamp(path_follow_position.x, MIN_X, MAX_X)
+	#print(new_mob.global_position)
 	$TileMap.add_child(new_mob)
 	$TileMap.move_child(new_mob, 0)
 
 
 func _on_timer_timeout():
+	var alive_monsters = $TileMap.get_children().filter(func(node): return node.has_method("take_damage"))
+	if alive_monsters.size() >= MAX_MONSTER_SPAWNS:
+		return
+	print(alive_monsters.size())
 	spawn_mob()
 
 

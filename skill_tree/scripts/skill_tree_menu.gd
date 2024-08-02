@@ -14,20 +14,30 @@ func unpause():
 	visible = false
 
 
-func pause(element_type=null):
+func pause(element_name=null):
 	visible = true
 	get_tree().paused = true
-	if element_type:
-		match element_type:
-			Spawner.ELEMENT_TYPE.ICE:
-				print("ice")
+	if element_name:
+		#i changed it to this implementation because i had a bug
+		#where the 'match' didnt entered the 'ice' code block
+		#when ta
+		match element_name:
+			"ICE":
 				%TabContainer.current_tab = 2
-			Spawner.ELEMENT_TYPE.FIRE:
-				print("fire")
+			"FIRE":
 				%TabContainer.current_tab = 1
-			Spawner.ELEMENT_TYPE.METAL:
-				print("metal")
+			"METAL":
 				%TabContainer.current_tab = 0
+		#match element_type:
+			#Spawner.ELEMENT_TYPE.ICE:
+				#print("ice")
+				#%TabContainer.current_tab = 2
+			#Spawner.ELEMENT_TYPE.FIRE:
+				#print("fire")
+				#%TabContainer.current_tab = 1
+			#Spawner.ELEMENT_TYPE.METAL:
+				#print("metal")
+				#%TabContainer.current_tab = 0
 
 func add_skill_tree(new_skill_tree_scene: Node,resource: AbilityResource):
 	new_skill_tree_scene.resource = resource

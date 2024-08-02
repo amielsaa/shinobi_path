@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	#enemies_in_range = get_overlapping_bodies()
-	if get_overlapping_bodies().size() > 0:
+	if get_overlapping_bodies().filter(body_is_mob).size() > 0:
 		if timer.is_stopped():
 			shoot()
 			timer.start()
@@ -23,7 +23,7 @@ func _physics_process(delta):
 		timer.stop()
 		
 func shoot():
-	enemies_in_range = get_overlapping_bodies()
+	enemies_in_range = get_overlapping_bodies().filter(body_is_mob)
 	for i in range(min(resource.quantity , enemies_in_range.size())):
 		look_at(enemies_in_range[i].global_position)
 		var new_projectile = projectile_scene.instantiate()
@@ -34,7 +34,8 @@ func shoot():
 
 
 
-
+func body_is_mob(body):
+	return body.has_method("take_damage")
 
 func _on_timer_timeout():
 	shoot()

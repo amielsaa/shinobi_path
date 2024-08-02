@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityResource" load_steps=3 format=3 uid="uid://but1jc00i58ok"]
+
+[ext_resource type="PackedScene" uid="uid://bkk1ycmwgdiyl" path="res://abilities/ice/ice.tscn" id="1_wrw3i"]
+[ext_resource type="Script" path="res://abilities/ability_resource.gd" id="2_ybr64"]
+
+[resource]
+script = ExtResource("2_ybr64")
+ability_type = 1
+ability_scene = ExtResource("1_wrw3i")
+base_damage = 3
+quantity = 1
+ability_name = "ICE"
+element_type = 0

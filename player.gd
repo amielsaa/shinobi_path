@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SKILL_POINTS_PER_LEVEL: int = 1
-const EXPERIENCE_MULTIPLIER: int = 2.10
+const EXPERIENCE_MULTIPLIER: float = 2.10
 
 signal health_depleted
 signal score_added(score_value)
@@ -28,8 +28,8 @@ func _ready():
 	var ability_resource_fireball = ResourceLoader.load("res://abilities/fireball/fireball.tres")
 	abilityManager.add_ability(ability_resource_fireball)
 	
-	var ability_resource_thunder = ResourceLoader.load("res://abilities/thunder/thunder.tres")
-	abilityManager.add_ability(ability_resource_thunder)
+	var ability_resource_ice = ResourceLoader.load("res://abilities/ice/ice.tres")
+	abilityManager.add_ability(ability_resource_ice)
 	
 	var shuriken_skill_tree_scene = preload("res://skill_tree/scenes/skill_tree.tscn").instantiate()
 	skillTreeMenu.add_skill_tree(shuriken_skill_tree_scene, ability_resource)
@@ -37,8 +37,8 @@ func _ready():
 	var fireball_skill_tree_scene = preload("res://skill_tree/scenes/fire_ball_tree.tscn").instantiate()
 	skillTreeMenu.add_skill_tree(fireball_skill_tree_scene, ability_resource_fireball)
 
-	var thunder_skill_tree_scene = preload("res://skill_tree/scenes/thunder_skill_tree.tscn").instantiate()
-	skillTreeMenu.add_skill_tree(thunder_skill_tree_scene, ability_resource_thunder)
+	var ice_skill_tree_scene = preload("res://skill_tree/scenes/ice_skill_tree.tscn").instantiate()
+	skillTreeMenu.add_skill_tree(ice_skill_tree_scene, ability_resource_ice)
 
 
 	
@@ -86,7 +86,7 @@ func level_up(experienceBar):
 	experienceBar.set_level_text(experienceBar.level)
 	#SkillTreeVariables.skill_points += SKILL_POINTS_PER_LEVEL
 	SkillTreeVariables.inrement_skill_points_by_type(experienceBar.element_type, SKILL_POINTS_PER_LEVEL)
-	skillTreeMenu.pause(experienceBar.element_type)
+	skillTreeMenu.pause(experienceBar.ability_name)
 
 func killed_mob(resource):
 	match resource.type:
