@@ -88,6 +88,7 @@ offset_top = 44.0
 offset_right = -55.0
 offset_bottom = 54.0
 level = 1
+ability_name = "ICE"
 
 [node name="FireExperienceBar" parent="Experience" instance=ExtResource("5_wfgpn")]
 unique_name_in_owner = true
@@ -99,6 +100,7 @@ offset_bottom = 65.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_8ghq8")
 level = 1
 element_type = 1
+ability_name = "FIRE"
 
 [node name="MetalExperienceBar" parent="Experience" instance=ExtResource("5_wfgpn")]
 unique_name_in_owner = true
@@ -110,6 +112,7 @@ offset_bottom = 76.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_kes78")
 level = 1
 element_type = 2
+ability_name = "METAL"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true

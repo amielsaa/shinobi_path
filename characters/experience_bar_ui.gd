@@ -3,6 +3,7 @@ extends ProgressBar
 @export var level: int
 @export var experience: int
 @export var element_type: Spawner.ELEMENT_TYPE
+@export var ability_name: String
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
