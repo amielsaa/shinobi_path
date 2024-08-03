@@ -102,4 +102,11 @@ func killed_mob(resource):
 		
 	playerUi.update_score(resource.damage)
 
-
+func change_spawn_ui(element_type):
+	match element_type:
+		Spawner.ELEMENT_TYPE.ICE:
+			%IceExperienceBar.set_totem_destroyed()
+		Spawner.ELEMENT_TYPE.FIRE:
+			%FireExperienceBar.set_totem_destroyed()
+		Spawner.ELEMENT_TYPE.METAL:
+			%MetalExperienceBar.set_totem_destroyed()

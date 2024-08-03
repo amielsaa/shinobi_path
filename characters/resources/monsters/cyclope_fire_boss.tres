@@ -8,5 +8,5 @@ script = ExtResource("1_d0pll")
 texture = ExtResource("2_ie4tf")
 health = 10
 speed = 0
-damage = 6
+damage = 7
 type = 1

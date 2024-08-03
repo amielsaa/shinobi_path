@@ -39,5 +39,5 @@ func take_damage(damage):
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
 		#await audio_player.finished
-		$Sprite2D.hide()
-		#queue_free()
+
+		queue_free()

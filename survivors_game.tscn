@@ -4490,7 +4490,7 @@ offset_bottom = 1107.0
 color = Color(0, 1, 1, 1)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.4
 autostart = true
 
 [connection signal="health_depleted" from="TileMap/Player" to="." method="_on_player_health_depleted"]
