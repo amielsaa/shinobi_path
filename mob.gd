@@ -32,7 +32,7 @@ func take_damage(damage):
 		return
 	if health <= 0:
 		is_dead = true
-		audio_player.play()
+		#audio_player.play()
 		monster.hide() # fixed a bug where it takes too long for the mob node to be freed
 		get_tree().call_group("Player","killed_mob",resource)
 		
@@ -41,7 +41,7 @@ func take_damage(damage):
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
 		
-		await audio_player.finished
+		#await audio_player.finished
 		queue_free()
 
 func freeze():

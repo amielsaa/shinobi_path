@@ -15,3 +15,10 @@ func play_walk_animation(direction):
 func update_blend_position(direction):
 	animation_tree["parameters/idle/blend_position"] = direction
 	animation_tree["parameters/walk/blend_position"] = direction
+
+func play_hit_animation():
+	$HitAnimationPlayer.play("hit_flash")
+
+func play_disable_hit():
+	await $HitAnimationPlayer.animation_finished
+	$HitAnimationPlayer.play("disable_hit")

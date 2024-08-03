@@ -6,7 +6,7 @@ func _physics_process(delta):
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_accept"):
 		unpause()
 
 func unpause():
@@ -47,3 +47,9 @@ func add_skill_tree(new_skill_tree_scene: Node,resource: AbilityResource):
 	%TabContainer.add_child(new_bar)
 	#%SHURIKEN.add_child(new_skill_tree_scene)
 	#add_child(new_skill_tree_scene)
+
+
+
+
+func _on_exit_skill_tree_button_pressed():
+	unpause()

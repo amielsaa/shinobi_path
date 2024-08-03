@@ -62,10 +62,13 @@ func _physics_process(delta):
 	var overalapping_mobs = %HurtBox.get_overlapping_bodies().filter(func(body): if body is CharacterBody2D: return body)
 	for overlapped in overalapping_mobs:
 		health -= overlapped.resource.damage * delta
+		%Ninja.play_hit_animation()
 		%ProgressBar.value = health
 		if health <= 0.0:
 			playerUi.save_score()
 			health_depleted.emit()
+	
+	%Ninja.play_disable_hit()
 
 
 func update_experience_bars():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo2p6cweofls8"]
+[gd_scene load_steps=8 format=3 uid="uid://bo2p6cweofls8"]
 
 [ext_resource type="Script" path="res://skill_tree/scripts/skill_tree_menu.gd" id="1_oycan"]
 [ext_resource type="Shader" path="res://skill_tree/resources/skill_tree_menu.gdshader" id="2_q7aog"]
 [ext_resource type="Theme" uid="uid://dtipy6xl0e3c6" path="res://skill_tree/resources/skill_tree_theme.tres" id="3_cxx6x"]
 [ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="4_dgiji"]
+[ext_resource type="Texture2D" uid="uid://cyf2db5k6l4f1" path="res://utils/exit_skill_tree_button.png" id="5_nwaee"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v2sk0"]
 shader = ExtResource("2_q7aog")
@@ -55,7 +56,7 @@ offset_top = -87.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "PRESS       [ESC]       TO       EXIT"
+text = "PRESS       [SPACE]       TO       EXIT"
 label_settings = SubResource("LabelSettings_30xtk")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -76,3 +77,13 @@ text = "SKILL          POINTS: "
 label_settings = SubResource("LabelSettings_30xtk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ExitSkillTreeButton" type="TextureButton" parent="Control"]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_nwaee")
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/ExitSkillTreeButton" to="." method="_on_exit_skill_tree_button_pressed"]

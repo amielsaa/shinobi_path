@@ -1,7 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://c8cof28seym83"]
+[gd_scene load_steps=33 format=3 uid="uid://c8cof28seym83"]
 
 [ext_resource type="Script" path="res://characters/ninja/ninja.gd" id="1_np4eo"]
 [ext_resource type="Texture2D" uid="uid://cry5ro8ws0v7t" path="res://characters/ninja/SpriteSheet.png" id="1_phobr"]
+[ext_resource type="Shader" uid="uid://bo4bf3ebcfw7l" path="res://characters/shaders/hit_ninja.tres" id="2_7s1i5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jwtp"]
+shader = ExtResource("2_7s1i5")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 0.227451, 0.239216, 0)
 
 [sub_resource type="Animation" id="Animation_a43nk"]
 length = 0.1
@@ -269,10 +275,65 @@ states/walk/position = Vector2(606.5, 102)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_72q1a"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_8lv11"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_bd67s")]
 graph_offset = Vector2(-46.3498, -11.6325)
 
+[sub_resource type="Animation" id="Animation_l7wyb"]
+resource_name = "hit_flash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m7vqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0u5hn"]
+resource_name = "disable_hit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xj8tl"]
+_data = {
+"RESET": SubResource("Animation_m7vqg"),
+"disable_hit": SubResource("Animation_0u5hn"),
+"hit_flash": SubResource("Animation_l7wyb")
+}
+
 [node name="Ninja" type="Node2D"]
 script = ExtResource("1_np4eo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0jwtp")
 texture = ExtResource("1_phobr")
 hframes = 4
 vframes = 7
@@ -292,3 +353,8 @@ parameters/conditions/idle = false
 parameters/conditions/is_walking = false
 parameters/idle/blend_position = Vector2(2.08165e-12, 0.1)
 parameters/walk/blend_position = Vector2(-0.00291264, 0.154386)
+
+[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xj8tl")
+}
