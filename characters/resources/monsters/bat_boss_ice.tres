@@ -8,5 +8,5 @@ script = ExtResource("1_i7k11")
 texture = ExtResource("2_cgt87")
 health = 4
 speed = 0
-damage = 2
+damage = 3
 type = 0

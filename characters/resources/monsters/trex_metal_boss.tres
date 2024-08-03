@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_l4x6l")
 texture = ExtResource("2_rnnyw")
-health = 10
+health = 8
 speed = 6
-damage = 4
+damage = 8
 type = 2

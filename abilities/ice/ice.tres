@@ -7,7 +7,7 @@
 script = ExtResource("2_ybr64")
 ability_type = 1
 ability_scene = ExtResource("1_wrw3i")
-base_damage = 3
-quantity = 1
+base_damage = 6
+quantity = 6
 ability_name = "ICE"
 element_type = 0

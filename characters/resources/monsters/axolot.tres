@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_j8dll")
 texture = ExtResource("2_3ntl5")
-health = 2
+health = 4
 speed = 0
-damage = 1
+damage = 3
 type = 0
