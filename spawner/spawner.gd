@@ -14,6 +14,7 @@ var health = 0
 func _ready():
 	health = resource.health
 	health_bar.max_value = resource.health
+	health_bar.value = resource.health
 	for area_zone in get_children():
 		if area_zone is Area2D:
 			area_zone.type = type
@@ -25,6 +26,11 @@ func _process(delta):
 
 func play_hurt_animation():
 	hit_animation_player.play("hit_flash")
+
+func increase_health():
+	health += 100
+	health_bar.max_value += 100
+	health_bar.value += 100
 
 func take_damage(damage):
 	health -= damage

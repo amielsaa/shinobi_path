@@ -82,4 +82,7 @@ func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 	if active_spawner_totems <= 0:
 		#transition to 'YOU WON' screen
 		print('you won')
+	for spawner in $TileMap.get_children().filter(func(node): return node is Spawner):
+		spawner.increase_health()
+		
 

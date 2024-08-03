@@ -51,7 +51,7 @@ offset_right = -1038.0
 offset_bottom = -231.0
 disabled = true
 sprite = ExtResource("4_ra47q")
-enhance_value = 2
+enhance_value = 1
 
 [node name="SkillButton2" parent="SkillButton2/SkillButton2/SkillButton3" instance=ExtResource("2_3jxlu")]
 layout_mode = 1
@@ -72,7 +72,7 @@ offset_right = -1249.0
 offset_bottom = -711.0
 disabled = true
 sprite = ExtResource("4_ra47q")
-enhance_value = 2
+enhance_value = 1
 
 [node name="SkillButton2" parent="SkillButton2/SkillButton3" instance=ExtResource("2_3jxlu")]
 layout_mode = 1
@@ -93,7 +93,7 @@ offset_right = -746.0
 offset_bottom = -512.0
 disabled = true
 sprite = ExtResource("4_ra47q")
-enhance_value = 3
+enhance_value = 2
 
 [node name="SkillPointsLabel" type="Label" parent="."]
 unique_name_in_owner = true
