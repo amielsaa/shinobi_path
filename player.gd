@@ -13,7 +13,7 @@ signal score_added(score_value)
 @onready var fireExperienceBar = %FireExperienceBar
 @onready var metalExperienceBar = %MetalExperienceBar
 
-var health = 1.0
+var health = 100.0
 
 var ice_experience = 0
 var fire_experience = 0
