@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd1bs5016f0ih"]
+[gd_scene load_steps=3 format=3 uid="uid://cd1bs5016f0ih"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_6j6t2"]
+[ext_resource type="Texture2D" uid="uid://bv1x60tyegwh" path="res://Shinobi_dead.jpg" id="2_r110b"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -8,6 +9,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_6j6t2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1913.0
+offset_bottom = 1073.0
+texture = ExtResource("2_r110b")
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -20,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0, 0, 0, 0.505882)
+color = Color(0.188235, 0.188235, 0.188235, 0.447059)
 
 [node name="Label" type="Label" parent="GameOver/ColorRect"]
 layout_mode = 1
@@ -29,20 +35,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -417.0
+offset_left = -439.0
 offset_top = -254.0
-offset_right = 430.0
+offset_right = 408.0
 offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 156
 text = "Game Over"
 
-[node name="RestartLabel" type="Label" parent="GameOver/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 536.0
-offset_top = 632.0
-offset_right = 1438.0
-offset_bottom = 729.0
-theme_override_font_sizes/font_size = 71
-text = "PRESS 'SPACE' TO RESTART"
+offset_left = 93.0
+offset_top = 707.0
+offset_right = 224.0
+offset_bottom = 773.0
+scale = Vector2(2.61797, 2.87603)
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Try Again"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return to menu"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

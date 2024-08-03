@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://ihqv1u7w5vo0"]
+
+[ext_resource type="Script" path="res://game_won.gd" id="1_hrat7"]
+[ext_resource type="Texture2D" uid="uid://djh7x87dbgbya" path="res://Shinobi_won.jpg" id="2_2mpfm"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="3_o7022"]
+
+[node name="GameWon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hrat7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.01193, 3.02733)
+texture = ExtResource("2_2mpfm")
+
+[node name="GameWon" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="GameWon"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.505882)
+
+[node name="Label" type="Label" parent="GameWon/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -151.0
+offset_right = 1825.0
+offset_bottom = 482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.280642, 0.393584)
+theme_override_colors/font_color = Color(0.547997, 0.0338311, 0.11601, 1)
+theme_override_fonts/font = ExtResource("3_o7022")
+theme_override_font_sizes/font_size = 156
+text = "Village   Cleared"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = 507.0
+offset_right = 550.0
+offset_bottom = 746.0
+grow_vertical = 2
+scale = Vector2(0.846103, 0.878279)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Start a new game"
+
+[node name="InstructionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Return to main menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InstructionButton" to="." method="_on_instruction_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
