@@ -1,6 +1,6 @@
 extends Node2D
 
-const TIMER_DECRESE_VALUE = 0.2
+const TIMER_DECRESE_VALUE = 0.1
 
 @onready var pathFollow2D = %TileMap/Player/Path2D/PathFollow2D
 @onready var gameOver = $GameOver
@@ -24,7 +24,7 @@ func spawn_mob():
 	var path_follow_position = %PathFollow2D.global_position
 	new_mob.global_position.y = clamp(path_follow_position.y, MIN_Y, MAX_Y)
 	new_mob.global_position.x = clamp(path_follow_position.x, MIN_X, MAX_X)
-	#print(new_mob.global_position)
+	print(new_mob.resource.damage)
 	$TileMap.add_child(new_mob)
 	$TileMap.move_child(new_mob, 0)
 
@@ -33,7 +33,6 @@ func _on_timer_timeout():
 	var alive_monsters = $TileMap.get_children().filter(func(node): return node.has_method("take_damage"))
 	if alive_monsters.size() >= MAX_MONSTER_SPAWNS:
 		return
-	print(alive_monsters.size())
 	spawn_mob()
 
 
@@ -79,6 +78,7 @@ func _on_area_2d_area_exited(area):
 func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 	$Timer.wait_time -= TIMER_DECRESE_VALUE
 	active_spawner_totems -= 1
+	$TileMap/Player.change_spawn_ui(element_type)
 	if active_spawner_totems <= 0:
 		#transition to 'YOU WON' screen
 		print('you won')

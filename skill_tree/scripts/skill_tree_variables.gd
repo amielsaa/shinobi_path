@@ -3,7 +3,7 @@ extends Node
 
 var fire_skill_points: int = 0
 var ice_skill_points: int = 0
-var metal_skill_points: int = 0
+var metal_skill_points: int = 5
 
 
 func decrement_skill_points_by_type(element_type: Spawner.ELEMENT_TYPE):

@@ -56,10 +56,20 @@ offset_top = -87.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "PRESS       [SPACE]       TO       EXIT"
+text = "PRESS                                                       TO       EXIT"
 label_settings = SubResource("LabelSettings_30xtk")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/ExitSkillTreeKey"]
+layout_mode = 0
+offset_left = 790.0
+offset_right = 1029.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 0.142952, 0.101453, 1)
+theme_override_fonts/font = ExtResource("4_dgiji")
+theme_override_font_sizes/font_size = 50
+text = "[SPACE]"
 
 [node name="SkillPointsLabel" type="Label" parent="Control"]
 unique_name_in_owner = true

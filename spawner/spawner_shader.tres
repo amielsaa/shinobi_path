@@ -1,0 +1,34 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://chhsnndpj2cvh"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_2k76r"]
+output_port_for_preview = 0
+parameter_name = "ColorParameter"
+default_value_enabled = true
+default_value = Color(0.333333, 0.890196, 0.992157, 0.258824)
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec4 ColorParameter : source_color = vec4(0.333333, 0.890196, 0.992157, 0.258824);
+
+
+
+void fragment() {
+// ColorParameter:2
+	vec4 n_out2p0 = ColorParameter;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out2p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-327.384, -2.32464)
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(400, 200)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_2k76r")
+nodes/fragment/2/position = Vector2(-200, 100)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)

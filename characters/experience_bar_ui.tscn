@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhj8in8615gkr"]
+[gd_scene load_steps=9 format=3 uid="uid://dhj8in8615gkr"]
 
 [ext_resource type="Script" path="res://characters/experience_bar_ui.gd" id="1_5joqw"]
 [ext_resource type="Texture2D" uid="uid://dcbe26sw18jha" path="res://skill_tree/nine_path_8.png" id="1_aiacu"]
 [ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="2_3apbm"]
+[ext_resource type="Texture2D" uid="uid://dwpt3aghns7wx" path="res://spawner/spawner-totem.png" id="4_35aov"]
+[ext_resource type="Texture2D" uid="uid://c37p4x63w6436" path="res://spawner/snow_circle_ground.png" id="4_bka0a"]
+[ext_resource type="Texture2D" uid="uid://dtt57c1gxujfo" path="res://spawner/red_x.png" id="6_7skb6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qghnj"]
 corner_radius_top_left = 5
@@ -43,3 +46,17 @@ theme_override_font_sizes/font_size = 13
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GroundSprite" type="Sprite2D" parent="."]
+position = Vector2(84.4444, 4.44444)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_bka0a")
+
+[node name="Totem" type="Sprite2D" parent="GroundSprite"]
+position = Vector2(0, -4.44444)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_35aov")
+
+[node name="TotemDestroyed" type="Sprite2D" parent="GroundSprite"]
+visible = false
+texture = ExtResource("6_7skb6")
