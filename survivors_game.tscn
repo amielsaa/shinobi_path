@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://7bk8vpgp3wa1"]
+[gd_scene load_steps=16 format=3 uid="uid://7bk8vpgp3wa1"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_3lky3"]
 [ext_resource type="PackedScene" uid="uid://ccomdpj71arav" path="res://player.tscn" id="1_wsev1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8w0i285jvovs" path="res://spawner/spawner.tscn" id="4_6hvdc"]
 [ext_resource type="Texture2D" uid="uid://25qedd3orojg" path="res://background/tilemaps/TilesetNature.png" id="4_tky1o"]
 [ext_resource type="Resource" uid="uid://digcy5syvh2aj" path="res://spawner/spawner_totem.tres" id="6_thlur"]
+[ext_resource type="Texture2D" uid="uid://iyaltvqan032" path="res://utils/titan_over_the_wall.png" id="8_046dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dyp3"]
 texture = ExtResource("2_b1sdu")
@@ -4434,6 +4435,9 @@ point_count = 5
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrdhm"]
 radius = 19.66
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6pwc"]
+radius = 246.018
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_3lky3")
@@ -4499,7 +4503,24 @@ color = Color(0, 1, 1, 1)
 wait_time = 0.4
 autostart = true
 
+[node name="Titans" type="Node2D" parent="."]
+
+[node name="TitanArea" type="Area2D" parent="Titans"]
+position = Vector2(-448, -695)
+collision_layer = 0
+collision_mask = 16
+
+[node name="Reiner" type="Sprite2D" parent="Titans/TitanArea"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_046dh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Titans/TitanArea"]
+position = Vector2(33, 21)
+shape = SubResource("CircleShape2D_v6pwc")
+
 [connection signal="health_depleted" from="TileMap/Player" to="." method="_on_player_health_depleted"]
 [connection signal="area_entered" from="TileMap/Player/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="TileMap/Player/Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Titans/TitanArea" to="." method="_on_titan_area_body_entered"]
+[connection signal="body_exited" from="Titans/TitanArea" to="." method="_on_titan_area_body_exited"]

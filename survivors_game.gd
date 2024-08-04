@@ -86,3 +86,13 @@ func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 		spawner.increase_health()
 		
 
+
+
+
+
+func _on_titan_area_body_entered(body):
+	GlobalAudioStreamPlayer.play_titan_music()
+
+
+func _on_titan_area_body_exited(body):
+	GlobalAudioStreamPlayer.stop_titan_music() 

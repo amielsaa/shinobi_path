@@ -46,6 +46,7 @@ corner_radius_bottom_left = 8
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+collision_layer = 17
 script = ExtResource("1_tqbvx")
 
 [node name="Ninja" parent="." instance=ExtResource("2_mixfc")]
