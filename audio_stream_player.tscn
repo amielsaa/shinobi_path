@@ -10,3 +10,5 @@ volume_db = -14.445
 autoplay = true
 bus = &"Music"
 script = ExtResource("2_xbfi6")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -81,7 +81,7 @@ func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 	$TileMap/Player.change_spawn_ui(element_type)
 	if active_spawner_totems <= 0:
 		#transition to 'YOU WON' screen
-		print('you won')
+		get_tree().change_scene_to_file("res://game_won.tscn")
 	for spawner in $TileMap.get_children().filter(func(node): return node is Spawner):
 		spawner.increase_health()
 		
