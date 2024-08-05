@@ -117,9 +117,9 @@ layout_mode = 2
 [node name="SkillButton" parent="." instance=ExtResource("3_egj8b")]
 layout_mode = 1
 offset_left = 282.0
-offset_top = 383.0
+offset_top = 385.0
 offset_right = -1475.0
-offset_bottom = -573.0
+offset_bottom = -571.0
 sprite = ExtResource("4_stya1")
 enhance_type = 0
 enhance_value = 1
@@ -146,6 +146,16 @@ sprite = ExtResource("4_stya1")
 enhance_type = 0
 enhance_value = 1
 
+[node name="SkillButton2" parent="SkillButton/SkillButton/SkillButton" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 1264.0
+offset_top = 597.0
+offset_right = -493.0
+offset_bottom = -359.0
+disabled = true
+sprite = ExtResource("5_fu2fr")
+enhance_value = 2
+
 [node name="SkillButton2" parent="SkillButton" instance=ExtResource("3_egj8b")]
 layout_mode = 1
 offset_left = 589.0
@@ -154,7 +164,7 @@ offset_right = -1168.0
 offset_bottom = -744.0
 disabled = true
 sprite = ExtResource("5_fu2fr")
-enhance_value = 2
+enhance_value = 1
 
 [node name="SkillButton2" parent="SkillButton/SkillButton2" instance=ExtResource("3_egj8b")]
 layout_mode = 1
@@ -164,7 +174,18 @@ offset_right = -844.0
 offset_bottom = -744.0
 disabled = true
 sprite = ExtResource("5_fu2fr")
-enhance_value = 3
+enhance_value = 2
+
+[node name="SkillButton3" parent="SkillButton/SkillButton2/SkillButton2" instance=ExtResource("3_egj8b")]
+layout_mode = 1
+offset_left = 1262.0
+offset_top = 212.0
+offset_right = -495.0
+offset_bottom = -744.0
+disabled = true
+sprite = ExtResource("4_stya1")
+enhance_type = 0
+enhance_value = 1
 
 [node name="SkillPointsLabel" type="Label" parent="."]
 unique_name_in_owner = true

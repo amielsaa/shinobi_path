@@ -19,3 +19,7 @@ func play_titan_music():
 
 func stop_titan_music():
 	play_random_music()
+
+
+func _on_finished():
+	play()

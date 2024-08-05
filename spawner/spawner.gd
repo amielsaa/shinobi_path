@@ -1,6 +1,8 @@
 extends StaticBody2D
 class_name Spawner
 
+const HEALTH_INCREASE_VALUE = 100
+
 enum ELEMENT_TYPE {ICE, FIRE, METAL}
 enum MOB_TYPE_ZONE {MONSTER, BOSS}
 
@@ -28,9 +30,9 @@ func play_hurt_animation():
 	hit_animation_player.play("hit_flash")
 
 func increase_health():
-	health += 100
-	health_bar.max_value += 100
-	health_bar.value += 100
+	health += HEALTH_INCREASE_VALUE
+	health_bar.max_value += HEALTH_INCREASE_VALUE
+	health_bar.value += HEALTH_INCREASE_VALUE
 
 func take_damage(damage):
 	health -= damage

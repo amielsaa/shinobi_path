@@ -32,3 +32,7 @@ func inrement_skill_points_by_type(element_type: Spawner.ELEMENT_TYPE, amount: i
 		Spawner.ELEMENT_TYPE.METAL:
 			metal_skill_points += amount
 
+func reset_points():
+	ice_skill_points = 0
+	fire_skill_points = 0
+	metal_skill_points = 0
