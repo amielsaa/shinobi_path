@@ -59,16 +59,16 @@ text = "Shinobi's       Path"
 
 [node name="TextEdit2" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 1493.0
-offset_top = 698.0
-offset_right = 1845.0
-offset_bottom = 951.0
+offset_left = 1045.0
+offset_top = 817.0
+offset_right = 1913.0
+offset_bottom = 1070.0
 theme_override_fonts/font = ExtResource("3_lkdgp")
 theme_override_font_sizes/font_size = 40
 text = "Made       By:
-Amiel       Saad
-Yoav       Avital
-Batel       Skolnik"
+Amiel       Saad - Key   Developer  &  Design
+Yoav       Avital - Design   &   Developer
+Batel       Shkolnik - Design   &   Developer"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InstructionButton" to="." method="_on_instruction_button_pressed"]
