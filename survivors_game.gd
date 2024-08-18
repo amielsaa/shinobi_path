@@ -45,26 +45,6 @@ func _on_player_health_depleted():
 
 
 func _on_area_2d_area_entered(area):
-	#var shape_index = area.shape_owner_get_owner(area.get_shape_index())
-	#if area == $BossArea:
-		#if area.get_meta("identifier") == "bossMobs":
-		#bossMobFlag = true
-		#print("boss mob flag is true1")
-	#elif area.shape_owner_get_owner(0).get_meta("identifier") == "bossMobs":
-		#
-		#bossMobFlag = true
-		#print("boss mob flag is true2")
-	#else :
-		#bossMobFlag = false
-		#print("boss mob flag is false")
-	#for shape in area.get_children():
-		#if shape.has_method("get_meta"):
-			#if shape.get_meta("identifier") == "bossMobs":
-				#bossMobFlag = true
-				#print("boss mob flag is true")
-			#else:
-				#bossMobFlag = false
-				#print("boss mob flag is false")
 	if area.area_zone_type == Spawner.MOB_TYPE_ZONE.BOSS:
 		bossMobFlag = true
 	spawn_type = area.type
