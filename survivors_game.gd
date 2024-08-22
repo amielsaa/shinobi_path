@@ -17,6 +17,9 @@ var bossMobFlag = false
 var active_spawner_totems: int = 3
 var spawn_type = Spawner.ELEMENT_TYPE.METAL
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_INHERIT
+
 func spawn_mob():
 	var mob_spawner = preload("res://characters/mobs/mob_spawner.gd").new()
 	%PathFollow2D.progress_ratio = randf()
@@ -65,9 +68,6 @@ func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 	for spawner in $TileMap.get_children().filter(func(node): return node is Spawner):
 		spawner.increase_health()
 		
-
-
-
 
 
 func _on_titan_area_body_entered(body):

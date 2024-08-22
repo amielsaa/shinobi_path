@@ -82,14 +82,17 @@ material = SubResource("ShaderMaterial_tt5vy")
 texture = ExtResource("2_aqoa8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_j8kty")
 
 [node name="MonsterAreaZone" parent="." instance=ExtResource("2_jkvva")]
+visible = false
 
 [node name="CollisionShape2D" parent="MonsterAreaZone" index="0"]
 shape = SubResource("CircleShape2D_ndogo")
 
 [node name="BossAreaZone" parent="." instance=ExtResource("2_jkvva")]
+visible = false
 area_zone_type = 1
 
 [node name="CollisionShape2D" parent="BossAreaZone" index="0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccomdpj71arav"]
+[gd_scene load_steps=17 format=3 uid="uid://ccomdpj71arav"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_tqbvx"]
 [ext_resource type="PackedScene" uid="uid://c8cof28seym83" path="res://characters/ninja/ninja.tscn" id="2_mixfc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c37p4x63w6436" path="res://spawner/snow_circle_ground.png" id="6_3scsv"]
 [ext_resource type="Texture2D" uid="uid://djc3stfa5plgn" path="res://spawner/fire_circle_ground.png" id="7_6gr47"]
 [ext_resource type="Texture2D" uid="uid://cd5wwxhyvn1n7" path="res://spawner/metal_circle_ground.png" id="8_8iaqy"]
+[ext_resource type="PackedScene" uid="uid://b3v1xyv8h0xpw" path="res://pause_menu.tscn" id="10_q2nmr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5nro"]
 radius = 7.28011
@@ -134,4 +135,7 @@ value = 100.0
 show_percentage = false
 
 [node name="SkillTreeMenu" parent="." instance=ExtResource("5_vc645")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_q2nmr")]
 visible = false

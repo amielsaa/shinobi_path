@@ -35,6 +35,7 @@ layout_mode = 2
 texture = ExtResource("3_kvruc")
 
 [node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 911.0
 offset_right = 183.0
@@ -44,6 +45,7 @@ theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
 [node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 974.0
 offset_right = 182.0
