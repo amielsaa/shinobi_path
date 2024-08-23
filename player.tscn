@@ -88,6 +88,7 @@ offset_bottom = 55.0
 
 [node name="IceExperienceBar" parent="Experience" instance=ExtResource("5_wfgpn")]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_left = -134.0
 offset_top = 44.0
@@ -99,6 +100,7 @@ ground_texture = ExtResource("6_3scsv")
 
 [node name="FireExperienceBar" parent="Experience" instance=ExtResource("5_wfgpn")]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_left = -134.0
 offset_top = 55.0
@@ -112,6 +114,7 @@ ground_texture = ExtResource("7_6gr47")
 
 [node name="MetalExperienceBar" parent="Experience" instance=ExtResource("5_wfgpn")]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 0
 offset_left = -134.0
 offset_top = 66.0
