@@ -17,6 +17,9 @@ var bossMobFlag = false
 var active_spawner_totems: int = 3
 var spawn_type = Spawner.ELEMENT_TYPE.METAL
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_INHERIT
+
 func spawn_mob():
 	var mob_spawner = preload("res://characters/mobs/mob_spawner.gd").new()
 	%PathFollow2D.progress_ratio = randf()
@@ -45,26 +48,6 @@ func _on_player_health_depleted():
 
 
 func _on_area_2d_area_entered(area):
-	#var shape_index = area.shape_owner_get_owner(area.get_shape_index())
-	#if area == $BossArea:
-		#if area.get_meta("identifier") == "bossMobs":
-		#bossMobFlag = true
-		#print("boss mob flag is true1")
-	#elif area.shape_owner_get_owner(0).get_meta("identifier") == "bossMobs":
-		#
-		#bossMobFlag = true
-		#print("boss mob flag is true2")
-	#else :
-		#bossMobFlag = false
-		#print("boss mob flag is false")
-	#for shape in area.get_children():
-		#if shape.has_method("get_meta"):
-			#if shape.get_meta("identifier") == "bossMobs":
-				#bossMobFlag = true
-				#print("boss mob flag is true")
-			#else:
-				#bossMobFlag = false
-				#print("boss mob flag is false")
 	if area.area_zone_type == Spawner.MOB_TYPE_ZONE.BOSS:
 		bossMobFlag = true
 	spawn_type = area.type
@@ -85,9 +68,6 @@ func spawn_destroyed(element_type: Spawner.ELEMENT_TYPE):
 	for spawner in $TileMap.get_children().filter(func(node): return node is Spawner):
 		spawner.increase_health()
 		
-
-
-
 
 
 func _on_titan_area_body_entered(body):

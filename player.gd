@@ -9,6 +9,7 @@ signal score_added(score_value)
 @onready var playerUi = $Camera2D/PlayerUI
 @onready var abilityManager = $AbilityManager
 @onready var skillTreeMenu = $SkillTreeMenu
+@onready var pauseMenu = $PauseMenu
 @onready var iceExperienceBar = %IceExperienceBar
 @onready var fireExperienceBar = %FireExperienceBar
 @onready var metalExperienceBar = %MetalExperienceBar
@@ -20,6 +21,7 @@ var fire_experience = 0
 var metal_experience = 0
 
 var level = 1
+
 
 func _ready():
 	var ability_resource = ResourceLoader.load("res://abilities/shuriken/shuriken.tres")
@@ -46,6 +48,10 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_pressed("skill_tree"):
 		skillTreeMenu.pause()
+	if event.is_action_pressed("pause_game"):
+		pauseMenu.pause()
+		
+	
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") # Calculates direction vector as 2d value

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3v1xyv8h0xpw"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_0ui1o"]
+[ext_resource type="Shader" path="res://skill_tree/resources/skill_tree_menu.gdshader" id="1_d57kv"]
+[ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="3_i1w84"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00lab"]
+shader = ExtResource("1_d57kv")
+shader_parameter/amount = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_idlcm"]
+font = ExtResource("3_i1w84")
+font_size = 50
+outline_size = 10
+outline_color = Color(0.0560928, 0.0395942, 0.071393, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_0ui1o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_00lab")
+offset_left = -1363.0
+offset_top = -693.0
+offset_right = 1908.0
+offset_bottom = 1078.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitPauseMenuKey" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -111.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS                    TO       EXIT"
+label_settings = SubResource("LabelSettings_idlcm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/ExitPauseMenuKey"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = -3.0
+offset_right = 960.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 0.142952, 0.101453, 1)
+theme_override_fonts/font = ExtResource("3_i1w84")
+theme_override_font_sizes/font_size = 50
+text = "[E]"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -140.5
+offset_right = 234.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartGame" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 1
+theme_override_font_sizes/font_size = 60
+text = "Restart Game"
+
+[node name="ReturnToMenu" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Return to menu"
+
+[node name="MuteMusic" type="Button" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Mute Music"
+
+[connection signal="pressed" from="Control/VBoxContainer/RestartGame" to="." method="_on_restart_game_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ReturnToMenu" to="." method="_on_return_to_menu_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MuteMusic" to="." method="_on_mute_music_pressed"]

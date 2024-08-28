@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7bk8vpgp3wa1"]
+[gd_scene load_steps=19 format=3 uid="uid://7bk8vpgp3wa1"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_3lky3"]
 [ext_resource type="PackedScene" uid="uid://ccomdpj71arav" path="res://player.tscn" id="1_wsev1"]
@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c2yl3h5j3etpg" path="res://background/tilemaps/TilesetHouse.png" id="3_6s2tc"]
 [ext_resource type="PackedScene" uid="uid://b8w0i285jvovs" path="res://spawner/spawner.tscn" id="4_6hvdc"]
 [ext_resource type="Texture2D" uid="uid://25qedd3orojg" path="res://background/tilemaps/TilesetNature.png" id="4_tky1o"]
+[ext_resource type="Script" path="res://SubViewport.gd" id="6_au8e8"]
+[ext_resource type="Texture2D" uid="uid://cp6o8r48vekmh" path="res://background.png" id="6_m16tq"]
 [ext_resource type="Resource" uid="uid://digcy5syvh2aj" path="res://spawner/spawner_totem.tres" id="6_thlur"]
 [ext_resource type="Texture2D" uid="uid://iyaltvqan032" path="res://utils/titan_over_the_wall.png" id="8_046dh"]
+[ext_resource type="Texture2D" uid="uid://c3avuncplsxhb" path="res://star_01.png" id="8_ghexg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dyp3"]
 texture = ExtResource("2_b1sdu")
@@ -4473,6 +4476,42 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Player/Area2D"]
 shape = SubResource("CircleShape2D_lrdhm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Player"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="TileMap/Player/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -140.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="TileMap/Player/CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(140, 140)
+render_target_update_mode = 4
+script = ExtResource("6_au8e8")
+
+[node name="Sprite2D" type="Sprite2D" parent="TileMap/Player/CanvasLayer/SubViewportContainer/SubViewport"]
+texture = ExtResource("6_m16tq")
+centered = false
+offset = Vector2(-180, -180)
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player/CanvasLayer/SubViewportContainer/SubViewport"]
+limit_left = -767
+limit_top = -639
+limit_right = 2113
+limit_bottom = 2063
+
+[node name="Marker" type="Sprite2D" parent="TileMap/Player/CanvasLayer/SubViewportContainer"]
+modulate = Color(0.211765, 1, 0.141176, 1)
+position = Vector2(67, 68)
+scale = Vector2(0.0780155, 0.078125)
+texture = ExtResource("8_ghexg")
 
 [node name="FireSpawner" parent="TileMap" instance=ExtResource("4_6hvdc")]
 position = Vector2(45, 135)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oub6rbkopmc8"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_ieo12"]
-[ext_resource type="Texture2D" uid="uid://01oc2imsmf3x" path="res://Map from above.jpg" id="2_lc0wf"]
+[ext_resource type="Texture2D" uid="uid://cp6o8r48vekmh" path="res://background.png" id="2_b6qlx"]
 [ext_resource type="FontFile" uid="uid://c4j3paadpaskt" path="res://utils/NormalFont.ttf" id="3_lkdgp"]
 
 [node name="MainMenu" type="Control"]
@@ -16,7 +16,7 @@ script = ExtResource("1_ieo12")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(958, 540.25)
 scale = Vector2(2.33577, 1.5119)
-texture = ExtResource("2_lc0wf")
+texture = ExtResource("2_b6qlx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -59,16 +59,16 @@ text = "Shinobi's       Path"
 
 [node name="TextEdit2" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 1493.0
-offset_top = 698.0
-offset_right = 1845.0
-offset_bottom = 951.0
+offset_left = 1045.0
+offset_top = 817.0
+offset_right = 1913.0
+offset_bottom = 1070.0
 theme_override_fonts/font = ExtResource("3_lkdgp")
 theme_override_font_sizes/font_size = 40
 text = "Made       By:
-Amiel       Saad
-Yoav       Avital
-Batel       Skolnik"
+Amiel       Saad - Key   Developer  &  Design
+Yoav       Avital - Design   &   Developer
+Batel       Shkolnik - Design   &   Developer"
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/InstructionButton" to="." method="_on_instruction_button_pressed"]
