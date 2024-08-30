@@ -16,7 +16,7 @@ func save_score():
 	file = null
  
 func load_score():
-	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
+	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)
 	var content = json.parse_string(file.get_as_text())
 	data = content
 

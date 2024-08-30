@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c37p4x63w6436" path="res://spawner/snow_circle_ground.png" id="6_3scsv"]
 [ext_resource type="Texture2D" uid="uid://djc3stfa5plgn" path="res://spawner/fire_circle_ground.png" id="7_6gr47"]
 [ext_resource type="Texture2D" uid="uid://cd5wwxhyvn1n7" path="res://spawner/metal_circle_ground.png" id="8_8iaqy"]
-[ext_resource type="PackedScene" uid="uid://b3v1xyv8h0xpw" path="res://pause_menu.tscn" id="10_q2nmr"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="10_q2nmr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5nro"]
 radius = 7.28011

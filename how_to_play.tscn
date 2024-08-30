@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b35x6myvw042l"]
+[gd_scene load_steps=6 format=3 uid="uid://ckotvy143or2c"]
 
-[ext_resource type="Texture2D" uid="uid://dwh25sirw46rt" path="res://toConvert-1.png" id="1_3m76j"]
 [ext_resource type="Script" path="res://how_to_play.gd" id="1_fpwjt"]
+[ext_resource type="Texture2D" uid="uid://cvtapikudiybw" path="res://utils/how_to_play_slide1.png" id="2_i0mc7"]
+[ext_resource type="Texture2D" uid="uid://dxc53caqdmryx" path="res://utils/how_to_play_slide2.png" id="3_45jam"]
 [ext_resource type="Texture2D" uid="uid://01oc2imsmf3x" path="res://Map from above.jpg" id="3_kvruc"]
+[ext_resource type="Texture2D" uid="uid://cna2yuc4dp6wd" path="res://utils/how_to_play_slide3.png" id="4_qxd5t"]
 
 [node name="HowToPlay" type="Control"]
 layout_mode = 3
@@ -26,9 +28,17 @@ horizontal_scroll_mode = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+[node name="HowToPlayerSlide1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_3m76j")
+texture = ExtResource("2_i0mc7")
+
+[node name="HowToPlayerSlide2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_45jam")
+
+[node name="HowToPlayerSlide3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_qxd5t")
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
